@@ -2,6 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+        :root {
+                --color-background: #f5eee3;
+                --color-text-primary: #4a3524;
+                --color-text-secondary: #7a5a3a;
+                --color-accent: #a6733f;
+                --color-border: #d8c3a5;
+                --color-card: #ffffff;
+                --color-ivory: #f5eee3;
+        }
+
+        body {
+                background-color: var(--color-background);
+                color: var(--color-text-primary);
+                font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        a {
+                color: var(--color-text-primary);
+        }
+}
+
+@layer components {
+        .brand-link {
+                color: var(--color-text-primary);
+                transition: color 200ms ease, background 200ms ease;
+        }
+
+        .brand-link:hover,
+        .brand-link:active {
+                background-image: linear-gradient(135deg, var(--color-accent), var(--color-text-primary));
+                color: var(--color-accent);
+        }
+
+        button[class*="bg-"],
+        a[class*="bg-"],
+        .interactive-gradient {
+                transition: background 200ms ease, color 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+        }
+
+        button[class*="bg-"]:hover,
+        button[class*="bg-"]:active,
+        a[class*="bg-"]:hover,
+        a[class*="bg-"]:active,
+        .interactive-gradient:hover,
+        .interactive-gradient:active {
+                background-image: linear-gradient(135deg, var(--color-accent), var(--color-text-primary));
+                color: var(--color-ivory) !important;
+        }
+}
+
 .discount-switch {
         position: relative;
         display: inline-flex;

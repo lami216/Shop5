@@ -109,7 +109,7 @@ const PurchaseSuccessPage = () => {
 
         if (error)
                 return (
-                        <div className='flex h-screen items-center justify-center text-white'>
+                        <div className='flex h-screen items-center justify-center bg-brand-surface text-payzone-navy'>
                                 {t("purchase.success.error", { message: error })}
                         </div>
                 );
@@ -122,7 +122,7 @@ const PurchaseSuccessPage = () => {
                 : "شكرًا لاختيارك متجرنا. سنتواصل معك للتحقق من تفاصيل العنوان.";
 
         return (
-                <div className='min-h-screen bg-payzone-navy px-4 py-10 text-payzone-navy sm:py-16' dir='rtl'>
+                <div className='min-h-screen bg-brand-surface px-4 py-10 text-payzone-navy sm:py-16' dir='rtl'>
                         <div className='mx-auto w-full max-w-4xl'>
                                 <div className='h-5 sm:h-7' aria-hidden='true' />
                                 <section className='rounded-3xl bg-white/95 p-6 shadow-xl ring-1 ring-black/5 sm:p-10'>

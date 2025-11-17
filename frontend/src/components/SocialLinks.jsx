@@ -32,9 +32,9 @@ export default function SocialLinks() {
   if (!links) return null;
 
   const items = [
-    { key: "facebook", label: "Facebook", href: links.facebook, className: "hover:bg-[#1877F2]" },
-    { key: "tiktok", label: "TikTok", href: links.tiktok, className: "hover:bg-black" },
-    { key: "whatsapp", label: "WhatsApp", href: links.whatsapp, className: "hover:bg-[#25D366]" },
+    { key: "facebook", label: "Facebook", href: links.facebook },
+    { key: "tiktok", label: "TikTok", href: links.tiktok },
+    { key: "whatsapp", label: "WhatsApp", href: links.whatsapp },
   ].filter((x) => !!x.href);
 
   if (items.length === 0) return null;
@@ -50,7 +50,7 @@ export default function SocialLinks() {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-white/10 text-white transition ${className}`}
+            className="interactive-gradient inline-flex items-center gap-2 rounded-xl border border-brand-border bg-payzone-white/80 px-4 py-2 text-payzone-navy shadow-sm"
             aria-label={label}
           >
             <span className="inline-flex"><IconComponent /></span>

@@ -44,7 +44,7 @@ function App() {
 	if (checkingAuth) return <LoadingSpinner />;
 
         return (
-                <div className='relative min-h-screen bg-payzone-navy text-payzone-white'>
+                <div className='relative min-h-screen bg-brand-surface text-payzone-navy'>
                         <div className='relative z-50 pt-20'>
                                 <Navbar />
                                 <Routes>
