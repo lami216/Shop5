@@ -127,8 +127,8 @@ const AnalyticsCard = ({ title, value, icon: Icon, gradient }) => (
                 </div>
                 <div className='relative z-10 flex justify-between'>
                         <div>
-                                <p className='mb-1 text-xs font-semibold uppercase tracking-wide text-white/70'>{title}</p>
-                                <h3 className='text-3xl font-bold text-white'>{value}</h3>
+                                <p className='mb-1 text-xs font-semibold uppercase tracking-wide text-[#4A3524]/70'>{title}</p>
+                                <h3 className='text-3xl font-bold text-[#4A3524]'>{value}</h3>
                         </div>
                         <div className='flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-payzone-gold'>
                                 <Icon className='h-6 w-6' />
