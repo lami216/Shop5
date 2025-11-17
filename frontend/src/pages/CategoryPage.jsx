@@ -69,7 +69,7 @@ const CategoryPage = () => {
                 isFilteringCurrentCategory && !searchLoading && !searchError && searchResults.length === 0;
 
         return (
-                <div className='min-h-screen'>
+                <div className='main-category min-h-screen'>
                         <div className='relative z-10 mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8'>
                                 <div className='mb-12'>
                                         <SearchBar variant='category' categorySlug={category} />
