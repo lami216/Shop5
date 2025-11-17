@@ -173,7 +173,7 @@ const ProductDetailPage = () => {
                                                         )}
                                                         <div className='space-y-2'>
                                                                 <p className='text-sm font-semibold text-white/70'>الإسم</p>
-                                                                <h1 className='text-3xl font-bold text-payzone-gold'>
+                                                                <h1 className='product-name text-3xl font-bold'>
                                                                         {selectedProduct.name}
                                                                 </h1>
                                                         </div>

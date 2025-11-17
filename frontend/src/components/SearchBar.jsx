@@ -464,7 +464,7 @@ const SearchBar = ({ variant = "global", categorySlug = null }) => {
                                                                                                 )}
                                                                                         </div>
                                                                                         <div className='flex flex-1 flex-col items-start gap-1 text-right'>
-                                                                                                <span className='text-base font-semibold text-payzone-white'>
+                                                                                                <span className='product-name text-base font-semibold'>
                                                                                                         {product.name}
                                                                                                 </span>
                                                                                                 <p className='line-clamp-2 text-sm text-payzone-white/60'>

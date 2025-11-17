@@ -89,7 +89,7 @@ const FeaturedProducts = ({ featuredProducts }) => {
                                                                                                 />
                                                                                         </div>
                                                                                         <div className='p-4'>
-                                                                                                <h3 className='mb-2 text-lg font-semibold text-white'>{product.name}</h3>
+                                                                                                <h3 className='product-name mb-2 text-lg font-semibold'>{product.name}</h3>
                                                                                                 <div className='mb-4 flex flex-wrap items-baseline gap-2'>
                                                                                                         {isDiscounted ? (
                                                                                                                 <>
