@@ -115,7 +115,7 @@ const AdminOrders = () => {
 
         if (loading) {
                 return (
-                        <div className='flex justify-center py-16 text-white/80'>
+                        <div className='flex justify-center py-16 text-[#4A3524]/80'>
                                 {t("common.status.processing")}
                         </div>
                 );
@@ -124,7 +124,7 @@ const AdminOrders = () => {
         if (!orders.length) {
                 return (
                         <motion.div
-                                className='rounded-xl border border-white/10 bg-white/5 p-8 text-center text-white/70'
+                                className='rounded-xl border border-white/10 bg-white/5 p-8 text-center text-[#4A3524]/70'
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                         >
@@ -135,7 +135,7 @@ const AdminOrders = () => {
 
         return (
                 <motion.div
-                        className='space-y-6 rounded-xl border border-payzone-indigo/40 bg-white/5 p-6 text-white shadow-lg backdrop-blur-sm'
+                        className='space-y-6 rounded-xl border border-payzone-indigo/40 bg-white/5 p-6 text-[#4A3524] shadow-lg backdrop-blur-sm'
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
                 >
@@ -151,8 +151,8 @@ const AdminOrders = () => {
                         </div>
 
                         <div className='overflow-x-auto'>
-                                <table className='min-w-full divide-y divide-white/10 text-right text-sm text-white'>
-                                        <thead className='bg-payzone-navy/60 text-xs uppercase tracking-wide text-white/60'>
+                                <table className='min-w-full divide-y divide-white/10 text-right text-sm text-[#4A3524]'>
+                                        <thead className='bg-payzone-navy/60 text-xs uppercase tracking-wide text-[#4A3524]/60'>
                                                 <tr>
                                                         <th className='px-4 py-3 font-medium'>{t("admin.orders.table.orderNumber")}</th>
                                                         <th className='px-4 py-3 font-medium'>{t("admin.orders.table.customer")}</th>
@@ -187,18 +187,18 @@ const AdminOrders = () => {
                                                                         </td>
                                                                         <td className='px-4 py-4 align-middle'>
                                                                                 <div className='flex flex-col text-sm'>
-                                                                                        <span className='font-semibold text-white'>
+                                                                                        <span className='font-semibold text-[#4A3524]'>
                                                                                                 {order.customerName}
                                                                                         </span>
-                                                                                        <span className='text-xs text-white/70'>
+                                                                                        <span className='text-xs text-[#4A3524]/70'>
                                                                                                 {order.phone}
                                                                                         </span>
                                                                                 </div>
                                                                         </td>
                                                                         <td className='px-4 py-4 align-middle'>
                                                                                 <div className='flex flex-col items-end'>
-                                                                                        <span className='font-semibold text-white'>{formattedTotal}</span>
-                                                                                        <span className='text-xs text-white/60'>
+                                                                                        <span className='font-semibold text-[#4A3524]'>{formattedTotal}</span>
+                                                                                        <span className='text-xs text-[#4A3524]/60'>
                                                                                                 {t("admin.orders.itemCount", { count: formattedCount })}
                                                                                         </span>
                                                                                         <span className='text-[11px] text-payzone-gold/80'>{paymentLabel}</span>
@@ -206,7 +206,7 @@ const AdminOrders = () => {
                                                                         </td>
                                                                         <td className='px-4 py-4 align-middle'>
                                                                                 <select
-                                                                                        className='min-w-[10rem] rounded-lg border border-white/20 bg-payzone-navy/60 px-3 py-2 text-sm text-white focus:border-payzone-gold focus:outline-none'
+                                                                                        className='min-w-[10rem] rounded-lg border border-white/20 bg-payzone-navy/60 px-3 py-2 text-sm text-[#4A3524] focus:border-payzone-gold focus:outline-none'
                                                                                         value={order.status}
                                                                                         onChange={(event) => handleStatusChange(order, event.target.value)}
                                                                                         disabled={order.status === "cancelled" || updatingOrderId === order._id}
@@ -229,7 +229,7 @@ const AdminOrders = () => {
                                                                                         </span>
                                                                                 )}
                                                                         </td>
-                                                                        <td className='px-4 py-4 align-middle text-sm text-white/80'>
+                                                                        <td className='px-4 py-4 align-middle text-sm text-[#4A3524]/80'>
                                                                                 {createdAt}
                                                                         </td>
                                                                         <td className='px-4 py-4 align-middle text-left'>
