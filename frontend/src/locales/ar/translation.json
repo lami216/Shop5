@@ -1,0 +1,496 @@
+{
+        "common": {
+                "appName": "بايزون",
+                "loading": "جاري التحميل...",
+                "actions": {
+                        "add": "إضافة",
+                        "addToCart": "أضف إلى السلة",
+                        "apply": "تطبيق",
+                        "applyCode": "تطبيق الرمز",
+                        "cancel": "إلغاء",
+                        "close": "إغلاق",
+                        "continue": "متابعة",
+                        "continueShopping": "متابعة التسوق",
+                        "create": "إنشاء",
+                        "delete": "حذف",
+                        "edit": "تعديل",
+                        "logout": "تسجيل الخروج",
+                        "login": "تسجيل الدخول",
+                        "signup": "إنشاء حساب",
+                        "proceed": "متابعة",
+                        "remove": "إزالة",
+                        "removeCoupon": "إزالة الكوبون",
+                        "save": "حفظ",
+                        "sendOrder": "إرسال الطلب عبر واتساب",
+                        "startShopping": "ابدأ التسوق",
+                        "thanks": "شكراً لثقتك بنا!",
+                        "update": "تحديث",
+                        "upload": "رفع الصور"
+                },
+                "status": {
+                        "noImage": "لا توجد صورة",
+                        "noProducts": "لا توجد منتجات",
+                        "processing": "جاري المعالجة...",
+                        "error": "خطأ"
+                },
+                "messages": {
+                        "loginRequiredForCoupon": "يرجى تسجيل الدخول لتفعيل كوبون الخصم.",
+                        "recommendationsError": "حدث خطأ أثناء جلب التوصيات",
+                        "cartEmpty": "سلتك فارغة.",
+                        "cartEmptyDetails": "يبدو أنك لم تضف أي منتجات إلى السلة بعد.",
+                        "cartEmptyToast": "سلتك فارغة، قم بإضافة منتجات أولاً.",
+                        "whatsAppInvalid": "يرجى إدخال رقم واتساب صحيح مكوّن من 8 إلى 15 رقمًا.",
+                        "fillAllFields": "يرجى تعبئة جميع الحقول قبل إرسال الطلب.",
+                        "whatsAppOpenFailed": "تعذر فتح واتساب تلقائياً، يرجى المحاولة مرة أخرى.",
+                        "orderThankYou": "شكراً لتسوقك من بايزون!",
+                        "noSessionId": "لا يوجد رقم جلسة في الرابط",
+                        "couponApplied": "الكوبون المطبق",
+                        "availableCoupon": "كوبوناتك المتاحة",
+                        "removeCoupon": "إزالة الكوبون",
+                        "noCartItems": "لا توجد عناصر في السلة",
+                        "couponRemoved": "تمت إزالة الكوبون",
+                        "productCreated": "تم إنشاء المنتج بنجاح",
+                        "productUpdated": "تم تحديث المنتج بنجاح",
+                        "categoryCreated": "تم إنشاء الفئة بنجاح",
+                        "categoryUpdated": "تم تحديث الفئة بنجاح",
+                        "categoryDeleted": "تم حذف الفئة بنجاح",
+                        "passwordMismatch": "كلمتا المرور غير متطابقتين.",
+                        "productAddedToCart": "تمت إضافة المنتج إلى السلة",
+                        "couponAppliedSuccess": "تم تطبيق الكوبون بنجاح",
+                        "couponCreated": "تم إنشاء الكوبون بنجاح",
+                        "couponsCreated": "تم إنشاء {{count}} كوبونات بنجاح",
+                        "couponUpdated": "تم تحديث الكوبون بنجاح"
+                }
+        },
+        "nav": {
+                "home": "الرئيسية",
+                "cart": "السلة",
+                "dashboard": "لوحة التحكم",
+                "admin": "المشرف",
+                "login": "تسجيل الدخول",
+                "signup": "إنشاء حساب",
+                "logout": "تسجيل الخروج"
+        },
+        "home": {
+                "titleLine1": "اكتشف",
+                "titleHighlight": "أبرز الفئات",
+                "subtitle": "تابع أحدث الاتجاهات في الخدمات الرقمية مع تجربة بايزون السلسة",
+                "featuredTitle": "مميزة"
+        },
+        "search": {
+                "placeholder": "ابحث عن منتج...",
+                "action": "بحث",
+                "categories": "الفئات",
+                "clear": "مسح البحث",
+                "resultsTitle": "نتائج البحث",
+                "noResults": "لا توجد منتجات مطابقة لـ \"{{query}}\"",
+                "genericError": "حدث خطأ أثناء البحث عن المنتجات.",
+                "categoriesTitle": "الفئات المتاحة",
+                "categoriesEmpty": "لا توجد فئات متاحة حالياً.",
+                "clearCategory": "إزالة تصفية الفئة"
+        },
+        "categories": {
+                "explore": "استكشف {{category}}",
+                "discover": "اكتشف {{category}}",
+                "manager": {
+                        "title": "إدارة الفئات",
+                        "description": "أنشئ الفئات ونظّمها بسهولة لعرضها في الواجهة الرئيسية.",
+                        "addButton": "إضافة فئة",
+                        "editButton": "تحديث الفئة",
+                        "form": {
+                                "name": "الاسم",
+                                "description": "الوصف",
+                                "image": "صورة الفئة",
+                                "chooseImage": "اختيار صورة",
+                                "changeImage": "تغيير الصورة",
+                                "imageHint": "يفضل رفع صورة مربعة للفئة.",
+                                "imageRequired": "يرجى رفع صورة للفئة.",
+                                "nameRequired": "يرجى إدخال اسم الفئة.",
+                                "submitCreate": "إنشاء الفئة",
+                                "submitUpdate": "حفظ التعديلات",
+                                "cancelEdit": "إلغاء التعديل",
+                                "delete": "حذف الفئة"
+                        },
+                        "list": {
+                                "title": "الفئات الحالية",
+                                "empty": "لا توجد فئات متاحة بعد.",
+                                "actions": {
+                                        "edit": "تعديل",
+                                        "delete": "حذف"
+                                }
+                        },
+                        "confirmDelete": "هل أنت متأكد أنك تريد حذف هذه الفئة؟"
+                }
+        },
+        "admin": {
+                "dashboardTitle": "لوحة تحكم المشرف",
+                "tabs": {
+                        "create": "إنشاء منتج",
+                        "products": "المنتجات",
+                        "analytics": "الإحصائيات",
+                        "orders": "الطلبات",
+                        "categories": "الفئات",
+                        "coupons": "الكوبونات"
+                },
+                "coupons": {
+                        "title": "إدارة الكوبونات",
+                        "subtitle": "أضف كوبونات جديدة وعدّل التفاصيل الحالية دون مغادرة الصفحة.",
+                        "searchPlaceholder": "ابحث عن رمز الكوبون",
+                        "addButton": "إضافة كوبون",
+                        "empty": "لا توجد كوبونات مطابقة للمعايير الحالية.",
+                        "status": {
+                                "active": "نشط",
+                                "inactive": "غير نشط"
+                        },
+                        "actions": {
+                                "activate": "تفعيل",
+                                "deactivate": "إيقاف"
+                        },
+                        "table": {
+                                "code": "رمز الكوبون",
+                                "discount": "نسبة الخصم",
+                                "expiresAt": "تاريخ الانتهاء",
+                                "isActive": "الحالة",
+                                "createdAt": "تاريخ الإنشاء",
+                                "actions": "الإجراءات"
+                        },
+                        "sort": {
+                                "createdAt": "الأحدث",
+                                "code": "حسب الرمز",
+                                "discount": "حسب نسبة الخصم",
+                                "expiresAt": "حسب تاريخ الانتهاء",
+                                "isActive": "حسب الحالة"
+                        },
+                        "pagination": {
+                                "summary": "الصفحة {{page}} من {{totalPages}} — إجمالي {{total}} كوبون",
+                                "prev": "السابق",
+                                "next": "التالي"
+                        },
+                        "form": {
+                                "createTitle": "إضافة كوبون جديد",
+                                "createSubtitle": "أدخل تفاصيل الكوبون وتأكد من صلاحية التاريخ.",
+                                "editTitle": "تعديل الكوبون {{code}}",
+                                "editSubtitle": "يمكنك تحديث الحقول أو تغيير حالة الكوبون.",
+                                "code": "رمز الكوبون",
+                                "bulkCodes": "مجموعة الرموز",
+                                "bulkModeMultiple": "إدخال عدة رموز",
+                                "bulkModeSingle": "إدخال رمز واحد",
+                                "bulkHint": "اكتب كل رمز في سطر مستقل أو افصل الرموز بفواصل.",
+                                "discountPercentage": "نسبة الخصم (%)",
+                                "expiresAt": "تاريخ الانتهاء",
+                                "isActive": "حالة الكوبون",
+                                "submitCreate": "حفظ الكوبون",
+                                "submitEdit": "تحديث الكوبون"
+                        },
+                        "validation": {
+                                "codeRequired": "رمز الكوبون مطلوب",
+                                "codeFormat": "يجب أن يتكون رمز الكوبون من أحرف كبيرة أو أرقام بدون مسافات",
+                                "bulkRequired": "يرجى إدخال رمز واحد على الأقل",
+                                "bulkDuplicate": "هناك رموز مكررة في القائمة",
+                                "bulkFormat": "يجب أن تحتوي جميع الرموز على أحرف كبيرة أو أرقام فقط",
+                                "discountRequired": "يرجى إدخال نسبة الخصم",
+                                "discountRange": "نسبة الخصم يجب أن تكون بين 1% و90%",
+                                "expiresRequired": "يرجى تحديد تاريخ الانتهاء",
+                                "expiresFuture": "يجب أن يكون تاريخ الانتهاء في المستقبل"
+                        }
+                },
+                "orders": {
+                        "title": "طلبات العملاء عبر واتساب",
+                        "refresh": "تحديث القائمة",
+                        "empty": "لا توجد طلبات مسجلة حتى الآن.",
+                        "itemCount": "{{count}} منتج",
+                        "table": {
+                                "orderNumber": "رقم الطلب",
+                                "customer": "العميل",
+                                "total": "الإجمالي",
+                                "status": "الحالة",
+                                "createdAt": "تاريخ الإنشاء",
+                                "actions": "الإجراءات"
+                        },
+                        "actions": {
+                                "cancel": "إلغاء الطلب"
+                        },
+                        "statusLabels": {
+                                "pending": "قيد المراجعة",
+                                "paid_whatsapp": "مدفوع - واتساب",
+                                "paid": "مدفوع",
+                                "processing": "قيد التجهيز",
+                                "shipped": "جارٍ الشحن",
+                                "delivered": "تم التسليم",
+                                "cancelled": "ملغي"
+                        },
+                        "statusNotes": {
+                                "cancelled": "تم إلغاء هذا الطلب ويمكن إعادة تفعيله عبر تغيير الحالة."
+                        },
+                        "paymentMethods": {
+                                "whatsapp": "واتساب"
+                        },
+                        "prompts": {
+                                "cancelReason": "ما سبب إلغاء الطلب؟ (اختياري)"
+                        },
+                        "messages": {
+                                "fetchError": "تعذر تحميل الطلبات",
+                                "statusUpdated": "تم تحديث حالة الطلب بنجاح",
+                                "statusUpdateError": "تعذر تحديث حالة الطلب",
+                                "cancelled": "تم إلغاء الطلب بنجاح",
+                                "cancelError": "تعذر إلغاء الطلب"
+                        }
+                },
+                "createProduct": {
+                        "title": "إنشاء منتج جديد",
+                        "editTitle": "تعديل المنتج {{name}}",
+                        "fields": {
+                                "name": "اسم المنتج",
+                                "description": "الوصف",
+                                "price": "السعر",
+                                "category": "الفئة",
+                                "baseLanguage": "لغة المحتوى",
+                                "images": "الصور",
+                                "cover": "الغلاف",
+                                "setAsCover": "تعيين كغلاف",
+                                "discountToggle": "تفعيل التخفيض",
+                                "discountHint": "قم بتفعيل هذا الخيار لإضافة نسبة تخفيض على السعر الأساسي.",
+                                "discountPercentage": "نسبة التخفيض (%)",
+                                "discountPreview": "السعر بعد خصم {{discount}}٪ من {{price}} يساوي {{final}}"
+                        },
+                        "placeholders": {
+                                "name": "أدخل اسم المنتج",
+                                "description": "صف المنتج",
+                                "price": "أدخل السعر",
+                                "category": "اختر الفئة",
+                                "baseLanguage": "اختر لغة المحتوى",
+                                "discountPercentage": "مثال: 15"
+                        },
+                        "buttons": {
+                                "uploadImages": "رفع الصور",
+                                "create": "إنشاء المنتج",
+                                "update": "حفظ التعديلات",
+                                "loading": "جاري التحميل..."
+                        },
+                        "messages": {
+                                "missingImages": "يرجى إضافة صورة واحدة على الأقل للمنتج.",
+                                "invalidPrice": "يرجى إدخال سعر صالح.",
+                                "imagesLimit": "يمكنك رفع {{count}} صور كحد أقصى.",
+                                "imagesRemaining": "يمكن إضافة {{count}} صورة أخرى فقط.",
+                                "productCreated": "تم إنشاء المنتج بنجاح",
+                                "nameRequired": "يرجى إدخال اسم المنتج.",
+                                "descriptionRequired": "يرجى كتابة وصف للمنتج.",
+                                "categoryRequired": "يرجى اختيار الفئة.",
+                                "discountRequired": "يرجى إدخال نسبة التخفيض.",
+                                "discountInvalid": "نسبة التخفيض يجب أن تكون رقماً صالحاً.",
+                                "discountRange": "نسبة التخفيض يجب أن تكون بين 1% و 99%."
+                        }
+                },
+                "productsTable": {
+                        "headers": {
+                                "product": "المنتج",
+                                "price": "السعر",
+                                "discount": "التخفيض",
+                                "category": "الفئة",
+                                "featured": "مميز",
+                                "actions": "إجراءات"
+                        },
+                        "confirmations": {
+                                "edit": "هل تريد تعديل المنتج {{name}}؟",
+                                "delete": "هل أنت متأكد أنك تريد حذف المنتج {{name}}؟"
+                        }
+                },
+                "analytics": {
+                        "loading": "جاري التحميل...",
+                        "cards": {
+                                "users": "إجمالي المستخدمين",
+                                "products": "إجمالي المنتجات",
+                                "sales": "إجمالي المبيعات",
+                                "revenue": "إجمالي الإيرادات"
+                        },
+                        "chart": {
+                                "sales": "المبيعات",
+                                "revenue": "الإيرادات"
+                        }
+                }
+        },
+        "products": {
+                "detail": {
+                        "notFound": {
+                                "title": "المنتج غير موجود",
+                                "description": "قد يكون المنتج الذي تبحث عنه قد أزيل أو غير متوفر مؤقتاً."
+                        },
+                        "viewImage": "عرض صورة المنتج {{index}}",
+                        "descriptionTitle": "تفاصيل المنتج",
+                        "descriptionFallback": "لا توجد تفاصيل إضافية لهذا المنتج حالياً."
+                }
+        },
+        "product": {
+                "notFound": {
+                        "title": "المنتج غير موجود",
+                        "description": "ربما تم حذف المنتج أو أنه غير متاح مؤقتاً."
+                },
+                "categoryLabel": "الفئة",
+                "addToCart": "أضف إلى السلة",
+                "viewDetails": "عرض تفاصيل {{name}}",
+                "price": "السعر"
+        },
+        "categoryPage": {
+                "title": "{{category}}",
+                "noProducts": "لا توجد منتجات"
+        },
+        "cart": {
+                "title": "السلة",
+                "empty": {
+                        "title": "سلتك فارغة",
+                        "description": "يبدو أنك لم تضف أي منتجات إلى السلة بعد.",
+                        "cta": "ابدأ التسوق"
+                },
+                "item": {
+                        "chooseQuantity": "اختر الكمية",
+                        "unitPrice": "سعر الوحدة",
+                        "lineTotal": "إجمالي المنتج",
+                        "increase": "زيادة الكمية",
+                        "decrease": "إنقاص الكمية",
+                        "remove": "إزالة المنتج"
+                },
+                "summary": {
+                        "title": "ملخص الطلب",
+                        "productsCount": "عدد المنتجات",
+                        "discountedSubtotal": "بعد خصومات المنتجات",
+                        "couponSavings": "توفير الكوبون",
+                        "grandTotal": "المجموع النهائي",
+                        "proceed": "متابعة إلى الدفع",
+                        "lead": "راجع منتجاتك وعدّل الكميات قبل المتابعة."
+                },
+                "coupon": {
+                        "label": "هل لديك كوبون أو بطاقة هدية؟",
+                        "placeholder": "أدخل الرمز هنا",
+                        "apply": "تطبيق الرمز",
+                        "appliedTitle": "الكوبون المطبق",
+                        "availableTitle": "",
+                        "remove": "إزالة الكوبون",
+                        "discount": "{{code}} - خصم {{discount}}%"
+                },
+                "recommendations": {
+                        "title": "منتجات اشتراها الآخرون أيضاً"
+                }
+        },
+        "checkout": {
+                "title": "إتمام الطلب",
+                "form": {
+                        "fullName": "الاسم الكامل",
+                        "whatsApp": "رقم الواتساب",
+                        "address": "عنوان التوصيل",
+                        "fullNamePlaceholder": "أدخل اسمك الكامل",
+                        "whatsAppPlaceholder": "مثال: 11223344",
+                        "addressPlaceholder": "اكتب عنوان التوصيل بالتفصيل"
+                },
+                "summary": {
+                        "title": "ملخص السلة",
+                        "subtotal": "الإجمالي الفرعي",
+                        "savings": "التوفير",
+                        "total": "الإجمالي",
+                        "notice": "سيتم فتح واتساب مع رسالة جاهزة تحتوي على تفاصيل طلبك."
+                },
+                "sendButton": "إرسال الطلب عبر واتساب",
+                "messages": {
+                        "newOrder": "طلب جديد من {{name}}",
+                        "customerWhatsApp": "رقم واتساب العميل: {{number}}",
+                        "address": "العنوان: {{address}}",
+                        "productsHeader": "تفاصيل المنتجات:",
+                        "noProducts": "- لا توجد منتجات في السلة",
+                        "coupon": "- {{code}} (خصم {{discount}}%)",
+                        "couponHeader": "الكوبون المستخدم:",
+                        "savings": "قيمة التوفير: {{amount}}",
+                        "total": "الإجمالي المستحق: {{amount}}",
+                        "thanks": "شكراً لتسوقك من بايزون!",
+                        "orderSent": "تم إرسال طلبك بنجاح عبر واتساب!",
+                        "orderNumber": "رقم الطلب: #{{number}}",
+                        "orderCreated": "تم إنشاء الطلب بنجاح!",
+                        "orderCreationFailed": "تعذر إنشاء الطلب. يرجى المحاولة مرة أخرى."
+                }
+        },
+        "auth": {
+                "login": {
+                        "title": "مرحباً بعودتك إلى بايزون",
+                        "email": "البريد الإلكتروني",
+                        "password": "كلمة المرور",
+                        "placeholderEmail": "you@example.com",
+                        "placeholderPassword": "••••••••",
+                        "button": "تسجيل الدخول",
+                        "loading": "جاري التحميل...",
+                        "prompt": "لست عضواً؟",
+                        "cta": "سجل الآن"
+                },
+                "signup": {
+                        "title": "أنشئ حسابك في بايزون",
+                        "name": "الاسم الكامل",
+                        "email": "البريد الإلكتروني",
+                        "password": "كلمة المرور",
+                        "confirmPassword": "تأكيد كلمة المرور",
+                        "placeholderName": "محمد أحمد",
+                        "placeholderEmail": "you@example.com",
+                        "placeholderPassword": "••••••••",
+                        "button": "إنشاء حساب",
+                        "loading": "جاري التحميل...",
+                        "prompt": "لديك حساب بالفعل؟",
+                        "cta": "سجل الدخول هنا"
+                }
+        },
+        "purchase": {
+                "success": {
+                        "heading": "تم إرسال الطلب بنجاح",
+                        "headingWhatsApp": "تم استلام طلبك عبر واتساب",
+                        "subheading": "شكراً لتسوقك من بايزون! تم تسجيل طلب منتجاتك بنجاح.",
+                        "subheadingWhatsApp": "شكراً لاستخدامك واتساب لإرسال طلب منتجاتك.",
+                        "followUp": "سيتواصل معك فريقنا قريباً للتحقق من العنوان وإتمام تجهيز المنتجات.",
+                        "backToStore": "العودة للتسوق",
+                        "processing": "جاري المعالجة...",
+                        "error": "خطأ: {{message}}",
+                        "noDetails": "لم نعثر على تفاصيل الطلب. يرجى إعادة تحميل الصفحة أو التواصل معنا لمساعدتك.",
+                        "details": {
+                                "title": "تفاصيل الطلب",
+                                "customer": "بيانات العميل",
+                                "name": "الاسم",
+                                "phone": "رقم الهاتف",
+                                "address": "عنوان التوصيل",
+                                "image": "صورة المنتج",
+                                "products": "المنتجات المطلوبة",
+                                "quantity": "العدد",
+                                "unitPrice": "سعر الوحدة",
+                                "total": "المجموع",
+                                "orderNumberLabel": "رقم الطلب: #{{orderNumber}}",
+                                "orderTotalLabel": "إجمالي الطلب: {{amount}}",
+                                "empty": "لا توجد منتجات مسجلة في هذا الطلب.",
+                                "summaryTitle": "المجموع النهائي",
+                                "countLabel": "عدد المنتجات",
+                                "grandTotalLabel": "إجمالي المنتجات"
+                        }
+                },
+                "cancel": {
+                        "title": "تم إلغاء عملية الشراء",
+                        "message": "تم إلغاء طلبك ولن يتم خصم أي مبالغ.",
+                        "help": "إذا واجهت أي مشكلة أثناء الدفع، يرجى التواصل مع فريق الدعم.",
+                        "button": "العودة إلى المتجر"
+                }
+        },
+        "toast": {
+                "createProductError": "فشل في إنشاء المنتج",
+                "fetchProductsError": "فشل في جلب المنتجات",
+                "loadProductError": "فشل في تحميل المنتج",
+                "deleteProductError": "فشل في حذف المنتج",
+                "updateProductError": "فشل في تحديث المنتج",
+                "categoryCreateError": "فشل في إنشاء الفئة",
+                "categoryUpdateError": "فشل في تحديث الفئة",
+                "categoryDeleteError": "فشل في حذف الفئة",
+                "categoryFetchError": "فشل في جلب الفئات",
+                "recommendationsError": "حدث خطأ أثناء جلب التوصيات",
+                "genericError": "حدث خطأ غير متوقع",
+                "logoutError": "حدث خطأ أثناء تسجيل الخروج",
+                "applyCouponError": "تعذر تطبيق الكوبون",
+                "couponAlreadyApplied": "تم تطبيق هذا الكوبون مسبقاً",
+                "cartFetchError": "تعذر تحميل عناصر السلة",
+                "addToCartError": "تعذر إضافة المنتج إلى السلة",
+                "removeItemError": "تعذر إزالة العنصر",
+                "updateQuantityError": "تعذر تحديث الكمية",
+                "couponCreateError": "تعذر إنشاء الكوبون",
+                "couponUpdateError": "تعذر تحديث الكوبون",
+                "couponFetchError": "تعذر تحميل الكوبونات"
+        }
+}
