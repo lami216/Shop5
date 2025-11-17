@@ -379,7 +379,16 @@
                         "address": "عنوان التوصيل",
                         "fullNamePlaceholder": "أدخل اسمك الكامل",
                         "whatsAppPlaceholder": "مثال: 11223344",
-                        "addressPlaceholder": "اكتب عنوان التوصيل بالتفصيل"
+                        "addressPlaceholder": "اكتب عنوان التوصيل بالتفصيل",
+                        "mapTitle": "موقع التوصيل على الخريطة",
+                        "locationPlaceholder": "لم يتم تحديد الموقع بعد",
+                        "shareLocationButton": "مشاركة موقعي الحالي",
+                        "locationError": "تعذر الحصول على موقعك، الرجاء تفعيل صلاحيات الموقع أو كتابة العنوان يدويًا",
+                        "manualAddress": "العنوان اليدوي (احتياطي)",
+                        "manualAddressPlaceholder": "اكتب عنوان التوصيل يدويًا في حال تعذر تحديد الموقع",
+                        "mapAlt": "خريطة موقع التوصيل",
+                        "locationCoordinates": "الإحداثيات: {{lat}}, {{lng}}",
+                        "locationLinkLabel": "فتح الموقع في خرائط جوجل"
                 },
                 "summary": {
                         "title": "ملخص السلة",
@@ -398,6 +407,7 @@
                         "coupon": "- {{code}} (خصم {{discount}}%)",
                         "couponHeader": "الكوبون المستخدم:",
                         "savings": "قيمة التوفير: {{amount}}",
+                        "mapLink": "رابط الموقع على الخريطة: {{link}}",
                         "total": "الإجمالي المستحق: {{amount}}",
                         "thanks": "شكراً لتسوقك من بوتيك MK!",
                         "orderSent": "تم إرسال طلبك بنجاح عبر واتساب!",
