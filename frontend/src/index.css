@@ -175,81 +175,108 @@
         outline-offset: 2px;
 }
 
-/* Admin panel readability enhancements */
+/* Main category and admin text normalization */
+.main-category,
 .admin-panel,
 .dashboard,
 .secret-page {
-        color: var(--text-dark);
+	color: #1c1c1c !important;
 }
 
-.admin-panel :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td) {
-        color: var(--text-dark) !important;
+.main-category :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td, strong, em, b, i),
+.admin-panel :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td, strong, em, b, i),
+.dashboard :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td, strong, em, b, i),
+.secret-page :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td, strong, em, b, i) {
+	color: #1c1c1c !important;
 }
 
-.admin-panel .form-control,
-.admin-panel input,
-.admin-panel textarea,
-.admin-panel select {
-        color: var(--text-dark) !important;
-        caret-color: var(--text-dark);
+.main-category :is(button, a, svg, .tab, .admin-tab, .card, .badge, .pill, .chip),
+.admin-panel :is(button, a, svg, .tab, .admin-tab, .card, .badge, .pill, .chip),
+.dashboard :is(button, a, svg, .tab, .admin-tab, .card, .badge, .pill, .chip),
+.secret-page :is(button, a, svg, .tab, .admin-tab, .card, .badge, .pill, .chip) {
+	color: #1c1c1c !important;
+	fill: #1c1c1c !important;
+	stroke: #1c1c1c !important;
 }
 
-.admin-panel input::placeholder,
-.admin-panel textarea::placeholder,
-.admin-panel select::placeholder {
-        color: var(--placeholder-color) !important;
-        opacity: 1;
+.main-category :is(button, a, svg, .tab, .admin-tab, .card, .badge, .pill, .chip):is(:hover, :focus, :active),
+.admin-panel :is(button, a, svg, .tab, .admin-tab, .card, .badge, .pill, .chip):is(:hover, :focus, :active),
+.dashboard :is(button, a, svg, .tab, .admin-tab, .card, .badge, .pill, .chip):is(:hover, :focus, :active),
+.secret-page :is(button, a, svg, .tab, .admin-tab, .card, .badge, .pill, .chip):is(:hover, :focus, :active) {
+	color: #1c1c1c !important;
+	fill: #1c1c1c !important;
+	stroke: #1c1c1c !important;
+}
+
+.main-category :is(input, textarea, select, option),
+.admin-panel :is(input, textarea, select, option),
+.dashboard :is(input, textarea, select, option),
+.secret-page :is(input, textarea, select, option) {
+	color: #1c1c1c !important;
+	caret-color: #1c1c1c;
+}
+
+.main-category :is(input::placeholder, textarea::placeholder, select::placeholder),
+.admin-panel :is(input::placeholder, textarea::placeholder, select::placeholder),
+.dashboard :is(input::placeholder, textarea::placeholder, select::placeholder),
+.secret-page :is(input::placeholder, textarea::placeholder, select::placeholder) {
+	color: #1c1c1c !important;
+	opacity: 1;
 }
 
 .admin-panel .admin-tab {
-        background-color: rgba(255, 255, 255, 0.9);
-        color: var(--text-dark) !important;
-        border-bottom: 2px solid transparent;
-        transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease;
+	background-color: rgba(255, 255, 255, 0.9);
+	color: #1c1c1c !important;
+	border-bottom: 2px solid transparent;
+	transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease;
 }
 
 .admin-panel .admin-tab:hover,
 .admin-panel .admin-tab:focus,
 .admin-panel .admin-tab:active {
-        color: var(--text-dark) !important;
-        background-color: rgba(255, 255, 255, 0.95);
+	color: #1c1c1c !important;
+	background-color: rgba(255, 255, 255, 0.95);
 }
 
 .admin-panel .admin-tab.admin-tab--active {
-        border-bottom-color: var(--color-accent);
-        box-shadow: inset 0 -2px 0 var(--text-dark);
-        background-color: #f7ecde;
-        color: var(--text-dark) !important;
+	border-bottom-color: var(--color-accent);
+	box-shadow: inset 0 -2px 0 #1c1c1c;
+	background-color: #f7ecde;
+	color: #1c1c1c !important;
 }
 
-.admin-panel [class*="bg-payzone-navy"],
-.admin-panel [class*="bg-payzone-indigo"],
-.admin-panel [class*="bg-payzone-gold"],
-.admin-panel [class*="bg-black"],
-.admin-panel [class*="bg-[#4a3524"],
-.admin-panel [class*="bg-[#3b3ad6"],
-.admin-panel .dark-surface {
-        color: var(--text-light) !important;
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-payzone-navy"],
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-payzone-indigo"],
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-payzone-gold"],
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-black"],
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-[#4a3524"],
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-[#3b3ad6"],
+:is(.main-category, .admin-panel, .dashboard, .secret-page) .dark-surface {
+	color: #ffffff !important;
+	fill: #ffffff !important;
+	stroke: #ffffff !important;
 }
 
-.admin-panel [class*="bg-payzone-navy"] :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td),
-.admin-panel [class*="bg-payzone-indigo"] :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td),
-.admin-panel [class*="bg-payzone-gold"] :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td),
-.admin-panel [class*="bg-black"] :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td) {
-        color: var(--text-light) !important;
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-payzone-navy"] :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td),
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-payzone-indigo"] :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td),
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-payzone-gold"] :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td),
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-black"] :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td) {
+	color: #ffffff !important;
+	fill: #ffffff !important;
+	stroke: #ffffff !important;
 }
 
-.admin-panel [class*="bg-payzone-navy"] :is(input, textarea, select),
-.admin-panel [class*="bg-payzone-indigo"] :is(input, textarea, select),
-.admin-panel [class*="bg-payzone-gold"] :is(input, textarea, select),
-.admin-panel [class*="bg-black"] :is(input, textarea, select) {
-        color: var(--text-light) !important;
-        caret-color: var(--text-light);
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-payzone-navy"] :is(input, textarea, select),
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-payzone-indigo"] :is(input, textarea, select),
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-payzone-gold"] :is(input, textarea, select),
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-black"] :is(input, textarea, select) {
+	color: #ffffff !important;
+	caret-color: #ffffff;
 }
 
-.admin-panel [class*="bg-payzone-navy"] :is(input::placeholder, textarea::placeholder, select::placeholder),
-.admin-panel [class*="bg-payzone-indigo"] :is(input::placeholder, textarea::placeholder, select::placeholder),
-.admin-panel [class*="bg-payzone-gold"] :is(input::placeholder, textarea::placeholder, select::placeholder),
-.admin-panel [class*="bg-black"] :is(input::placeholder, textarea::placeholder, select::placeholder) {
-        color: var(--placeholder-color) !important;
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-payzone-navy"] :is(input::placeholder, textarea::placeholder, select::placeholder),
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-payzone-indigo"] :is(input::placeholder, textarea::placeholder, select::placeholder),
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-payzone-gold"] :is(input::placeholder, textarea::placeholder, select::placeholder),
+:is(.main-category, .admin-panel, .dashboard, .secret-page) [class*="bg-black"] :is(input::placeholder, textarea::placeholder, select::placeholder) {
+	color: #ffffff !important;
 }

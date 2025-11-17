@@ -20,7 +20,7 @@ const HomePage = () => {
         }, [fetchCategories]);
 
         return (
-                <div className='relative min-h-screen overflow-hidden text-payzone-navy'>
+                <div className='main-category relative min-h-screen overflow-hidden text-payzone-navy'>
                         <div className='relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8'>
                                 <h1 className='mb-4 text-center text-5xl font-bold sm:text-6xl'>
                                         <span className='block text-payzone-navy'>{t("home.titleLine1")}</span>
@@ -50,6 +50,6 @@ const HomePage = () => {
                                 )}
                         </div>
                 </div>
-	);
+        );
 };
 export default HomePage;
