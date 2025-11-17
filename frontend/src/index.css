@@ -54,6 +54,41 @@
                 background-image: linear-gradient(135deg, var(--color-accent), var(--color-text-primary));
                 color: var(--color-text-primary) !important;
         }
+
+        .checkout-page {
+                color: var(--text-dark);
+        }
+
+        .checkout-page :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td, .section-title) {
+                color: var(--text-dark) !important;
+        }
+
+        .checkout-page input,
+        .checkout-page textarea,
+        .checkout-page select {
+                color: var(--text-dark) !important;
+                background-color: rgba(255, 255, 255, 0.95);
+                caret-color: var(--text-dark);
+                border-color: var(--color-border);
+        }
+
+        .checkout-page input::placeholder,
+        .checkout-page textarea::placeholder,
+        .checkout-page select::placeholder {
+                color: var(--placeholder-color) !important;
+                opacity: 1;
+        }
+
+        .checkout-page .btn-primary {
+                background-color: #a6733f;
+                color: var(--text-light) !important;
+        }
+
+        .checkout-page .btn-primary:hover,
+        .checkout-page .btn-primary:focus-visible {
+                background-color: #8c5d30;
+                color: var(--text-light) !important;
+        }
 }
 
 .navbar {
