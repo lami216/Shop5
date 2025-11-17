@@ -14,7 +14,7 @@ const Navbar = () => {
         const cartLink = (
                 <Link
                         to={'/cart'}
-                        className='relative group flex items-center gap-2 rounded-md bg-white/10 px-4 py-2 text-sm font-semibold text-payzone-white'
+                        className='relative group flex items-center gap-2 rounded-md border border-brand-border bg-payzone-white/70 px-4 py-2 text-sm font-semibold text-[#4A3524] shadow-sm hover:bg-payzone-gold/20'
                 >
                         <ShoppingCart size={18} />
                         <span className='hidden sm:inline'>{t("nav.cart")}</span>
@@ -27,10 +27,10 @@ const Navbar = () => {
         );
 
         return (
-                <header className='fixed top-0 right-0 w-full border-b border-brand-border bg-payzone-navy/95 backdrop-blur-xl shadow-lg transition-all duration-300 z-40'>
+                <header className='navbar fixed top-0 right-0 w-full border-b border-brand-border shadow-lg backdrop-blur-xl transition-all duration-300 z-40'>
                         <div className='container mx-auto px-4 py-3'>
                                 <div className='flex flex-wrap items-center justify-between gap-4'>
-                                        <Link to='/' className='flex items-center gap-3 text-payzone-white'>
+                                        <Link to='/' className='flex items-center gap-3 text-[#4A3524]'>
                                                 <img
                                                         src='/logo.png'
                                                         alt='شعار بوتيك MK'
@@ -43,13 +43,13 @@ const Navbar = () => {
                                                 <nav className='flex items-center gap-4'>
                                                         <Link
                                                                 to={'/'}
-                                                                className='brand-link text-white/80'
+                                                                className='brand-link text-[#4A3524] hover:text-[#6b4b32]'
                                                         >
                                                                 {t("nav.home")}
                                                         </Link>
                                                         {isAdmin && (
                                                                 <Link
-                                                                        className='flex items-center gap-2 rounded-md bg-payzone-indigo px-3 py-1 text-payzone-white'
+                                                                        className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-gold/25 px-3 py-1 text-[#4A3524] shadow-sm hover:bg-payzone-gold/35'
                                                                         to={'/secret-dashboard'}
                                                                 >
                                                                         <Lock className='inline-block' size={18} />
@@ -62,7 +62,7 @@ const Navbar = () => {
                                                         {cartLink}
                                                         {user ? (
                                                                 <button
-                                                                        className='flex items-center gap-2 rounded-md bg-white/10 px-4 py-2 text-payzone-white'
+                                                                        className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-white/70 px-4 py-2 text-[#4A3524] shadow-sm hover:bg-payzone-gold/20'
                                                                         onClick={logout}
                                                                 >
                                                                         <LogOut size={18} />
@@ -72,14 +72,14 @@ const Navbar = () => {
                                                                 <>
                                                                         <Link
                                                                                 to={'/signup'}
-                                                                                className='flex items-center gap-2 rounded-md bg-payzone-gold px-4 py-2 font-semibold text-payzone-navy'
+                                                                                className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-gold px-4 py-2 font-semibold text-[#4A3524] shadow-sm hover:bg-payzone-gold/80'
                                                                         >
                                                                                 <UserPlus size={18} />
                                                                                 {t("nav.signup")}
                                                                         </Link>
                                                                         <Link
                                                                                 to={'/login'}
-                                                                                className='flex items-center gap-2 rounded-md bg-payzone-indigo px-4 py-2 text-payzone-white'
+                                                                                className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-indigo/80 px-4 py-2 text-[#4A3524] shadow-sm hover:bg-payzone-indigo'
                                                                         >
                                                                                 <LogIn size={18} />
                                                                                 {t("nav.login")}
