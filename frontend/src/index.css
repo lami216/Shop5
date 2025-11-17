@@ -40,6 +40,13 @@
                 color: var(--color-accent);
         }
 
+        .product-name,
+        .product-name:hover,
+        .product-name:focus,
+        .product-name:active {
+                color: #4a3524 !important;
+        }
+
         button[class*="bg-"],
         a[class*="bg-"],
         .interactive-gradient {

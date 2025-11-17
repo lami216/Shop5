@@ -47,7 +47,7 @@ const CartItem = ({ item }) => {
 
                         <div className='flex flex-col gap-3'>
                                 <div className='flex items-start justify-between gap-3'>
-                                        <h3 className='text-[clamp(1.05rem,2.4vw,1.25rem)] font-semibold text-white'>{item.name}</h3>
+                                        <h3 className='product-name text-[clamp(1.05rem,2.4vw,1.25rem)] font-semibold'>{item.name}</h3>
                                         {isDiscounted && (
                                                 <span className='rounded-full bg-red-500/20 px-2 py-1 text-xs font-semibold text-red-200'>
                                                         -{discountPercentage}%
