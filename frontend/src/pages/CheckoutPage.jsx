@@ -15,7 +15,10 @@ const CheckoutPage = () => {
         const navigate = useNavigate();
         const [customerName, setCustomerName] = useState("");
         const [whatsAppNumber, setWhatsAppNumber] = useState("");
-        const [address, setAddress] = useState("");
+        const [manualAddress, setManualAddress] = useState("");
+        const [location, setLocation] = useState(null);
+        const [locationError, setLocationError] = useState("");
+        const [isRequestingLocation, setIsRequestingLocation] = useState(false);
         const [whatsAppError, setWhatsAppError] = useState("");
         const [isSubmitting, setIsSubmitting] = useState(false);
         const { t } = useTranslation();
@@ -40,7 +43,34 @@ const CheckoutPage = () => {
 
         const normalizedWhatsAppNumber = whatsAppNumber.replace(/\D/g, "");
         const isWhatsAppValid = /^\d{8,15}$/.test(normalizedWhatsAppNumber);
-        const isFormValid = customerName.trim() !== "" && address.trim() !== "" && cart.length > 0 && isWhatsAppValid;
+        const hasLocation = Boolean(location);
+        const hasManualAddress = manualAddress.trim() !== "";
+        const isFormValid =
+                customerName.trim() !== "" && cart.length > 0 && isWhatsAppValid && (hasLocation || hasManualAddress);
+
+        const handleShareLocation = () => {
+                setLocationError("");
+
+                if (!navigator.geolocation) {
+                        setLocationError(t("checkout.form.locationError"));
+                        return;
+                }
+
+                setIsRequestingLocation(true);
+
+                navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                                const { latitude, longitude } = position.coords;
+                                setLocation({ lat: latitude, lng: longitude });
+                                setLocationError("");
+                                setIsRequestingLocation(false);
+                        },
+                        () => {
+                                setLocationError(t("checkout.form.locationError"));
+                                setIsRequestingLocation(false);
+                        }
+                );
+        };
 
         const handleWhatsAppChange = (event) => {
                 const value = event.target.value;
@@ -81,7 +111,7 @@ const CheckoutPage = () => {
                         return;
                 }
 
-                if (!customerName.trim() || !whatsAppNumber.trim() || !address.trim()) {
+                if (!customerName.trim() || !whatsAppNumber.trim() || (!hasLocation && !hasManualAddress)) {
                         toast.error(t("common.messages.fillAllFields"));
                         return;
                 }
@@ -99,12 +129,18 @@ const CheckoutPage = () => {
                 }
 
                 const sanitizedPhone = normalizedWhatsAppNumber;
+                const locationLink = location
+                        ? `https://www.google.com/maps?q=${encodeURIComponent(location.lat)},${encodeURIComponent(
+                                        location.lng
+                                )}`
+                        : "";
+                const resolvedAddress = manualAddress.trim() || locationLink;
                 const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
 
                 const baseOrderDetails = {
                         customerName: customerName.trim(),
                         phone: sanitizedPhone,
-                        address: address.trim(),
+                        address: resolvedAddress,
                         items: cart.map((item) => {
                                 const { price, discountedPrice, discountPercentage, isDiscounted } =
                                         getProductPricing(item);
@@ -214,6 +250,10 @@ const CheckoutPage = () => {
                                 );
                         }
 
+                        if (locationLink) {
+                                messageLines.push(t("checkout.messages.mapLink", { link: locationLink }));
+                        }
+
                         messageLines.push("", t("checkout.messages.total", { amount: formatMRU(serverTotal) }));
                         messageLines.push("", t("checkout.messages.thanks"));
 
@@ -285,19 +325,81 @@ const CheckoutPage = () => {
                                                         {whatsAppError && <p className='text-sm text-red-400'>{whatsAppError}</p>}
                                                 </div>
 
-                                                <div className='space-y-2'>
-                                                        <label className='block text-sm font-medium' htmlFor='address'>
-                                                                {t("checkout.form.address")}
-                                                        </label>
-                                                        <textarea
-                                                                id='address'
-                                                                value={address}
-                                                                onChange={(event) => setAddress(event.target.value)}
-                                                                rows={4}
-                                                                className='w-full rounded-lg border border-payzone-indigo/40 bg-white px-4 py-2 text-[var(--text-dark)] placeholder-[var(--placeholder-color)] focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
-                                                                placeholder={t("checkout.form.addressPlaceholder")}
-                                                                required
-                                                        />
+                                                <div className='space-y-3'>
+                                                        <div className='space-y-1'>
+                                                                <p className='text-sm font-medium text-payzone-navy'>
+                                                                        {t("checkout.form.mapTitle")}
+                                                                </p>
+                                                                <div className='overflow-hidden rounded-xl border border-payzone-indigo/30 bg-white/70 shadow-sm'>
+                                                                        {location ? (
+                                                                                import.meta.env.VITE_GOOGLE_MAPS_API_KEY ? (
+                                                                                        <img
+                                                                                                src={`https://maps.googleapis.com/maps/api/staticmap?center=${location.lat},${location.lng}&zoom=15&size=900x360&markers=color:red%7C${location.lat},${location.lng}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`}
+                                                                                                alt={t("checkout.form.mapAlt")}
+                                                                                                className='h-64 w-full object-cover'
+                                                                                        />
+                                                                                ) : (
+                                                                                        <div className='flex h-64 w-full flex-col items-center justify-center gap-2 bg-white/60 px-4 text-center text-payzone-navy'>
+                                                                                                <p className='text-base font-semibold'>
+                                                                                                        {t("checkout.form.locationCoordinates", {
+                                                                                                                lat: location.lat.toFixed(5),
+                                                                                                                lng: location.lng.toFixed(5),
+                                                                                                        })}
+                                                                                                </p>
+                                                                                                <a
+                                                                                                        href={`https://www.google.com/maps?q=${location.lat},${location.lng}`}
+                                                                                                        target='_blank'
+                                                                                                        rel='noreferrer'
+                                                                                                        className='text-sm font-semibold text-payzone-indigo underline'
+                                                                                                >
+                                                                                                        {t("checkout.form.locationLinkLabel")}
+                                                                                                </a>
+                                                                                        </div>
+                                                                                )
+                                                                        ) : (
+                                                                                <div className='flex h-64 w-full items-center justify-center bg-white/50 text-payzone-navy/70'>
+                                                                                        <span>{t("checkout.form.locationPlaceholder")}</span>
+                                                                                </div>
+                                                                        )}
+                                                                </div>
+                                                        </div>
+
+                                                        <div className='flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between'>
+                                                                <motion.button
+                                                                        type='button'
+                                                                        onClick={handleShareLocation}
+                                                                        disabled={isRequestingLocation}
+                                                                        className='btn-primary w-full rounded-lg px-5 py-3 text-base font-semibold transition duration-300 focus:outline-none focus:ring-4 focus:ring-payzone-indigo/40 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto'
+                                                                        whileHover={{ scale: 1.02 }}
+                                                                        whileTap={{ scale: 0.97 }}
+                                                                >
+                                                                        {isRequestingLocation
+                                                                                ? t("common.status.processing")
+                                                                                : t("checkout.form.shareLocationButton")}
+                                                                </motion.button>
+                                                                {locationError && (
+                                                                        <p className='text-sm text-payzone-navy/70'>
+                                                                                {t("checkout.form.locationError")}
+                                                                        </p>
+                                                                )}
+                                                        </div>
+
+                                                        {locationError && (
+                                                                <div className='space-y-2 rounded-lg border border-payzone-indigo/30 bg-white/60 p-3'>
+                                                                        <label className='block text-sm font-medium' htmlFor='manualAddress'>
+                                                                                {t("checkout.form.manualAddress")}
+                                                                        </label>
+                                                                        <textarea
+                                                                                id='manualAddress'
+                                                                                value={manualAddress}
+                                                                                onChange={(event) => setManualAddress(event.target.value)}
+                                                                                rows={3}
+                                                                                className='w-full rounded-lg border border-payzone-indigo/40 bg-white px-4 py-2 text-[var(--text-dark)] placeholder-[var(--placeholder-color)] focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
+                                                                                placeholder={t("checkout.form.manualAddressPlaceholder")}
+                                                                                required={!location}
+                                                                        />
+                                                                </div>
+                                                        )}
                                                 </div>
 
                                                 <motion.button

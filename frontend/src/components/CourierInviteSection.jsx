@@ -18,7 +18,7 @@ const CourierInviteSection = () => {
                                                 className='courier-cta-button courier-cta-pulse group inline-flex w-full flex-row-reverse items-center justify-center gap-3 rounded-full px-6 py-3 text-lg font-semibold sm:w-auto sm:px-8 sm:py-3.5'
                                                 aria-label='التوجه لنموذج انضمام الموصّلين'
                                         >
-                                                <span className='whitespace-nowrap text-payzone-navy'>أنا موصل وأبي أشتغل</span>
+                                                <span className='whitespace-nowrap text-payzone-navy'>انضم لطاقم التوصيل</span>
                                                 <Bike className='h-5 w-5 text-payzone-navy transition-transform duration-500 ease-out group-hover:translate-y-[-2px] group-hover:scale-110 group-active:translate-y-[-1px]' />
                                         </Link>
                                 </div>

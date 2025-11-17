@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
@@ -28,6 +28,7 @@ function App() {
         const checkingAuth = useUserStore((state) => state.checkingAuth);
         const initializeCart = useCartStore((state) => state.initializeCart);
         const getCartItems = useCartStore((state) => state.getCartItems);
+        const location = useLocation();
 
         useEffect(() => {
                 checkAuth();
@@ -43,7 +44,9 @@ function App() {
                 getCartItems();
         }, [getCartItems, user]);
 
-	if (checkingAuth) return <LoadingSpinner />;
+        if (checkingAuth) return <LoadingSpinner />;
+
+        const isHomePage = location.pathname === "/";
 
         return (
                 <div className='relative min-h-screen bg-brand-surface text-payzone-navy'>
@@ -68,7 +71,7 @@ function App() {
                                 </Routes>
                         </div>
                         <Toaster />
-                        <CourierInviteSection />
+                        {isHomePage && <CourierInviteSection />}
                         <Footer />
                 </div>
         );
