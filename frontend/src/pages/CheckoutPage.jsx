@@ -244,18 +244,18 @@ const CheckoutPage = () => {
         };
 
         return (
-                <div className='py-10'>
+                <div className='checkout-page py-10'>
                         <div className='mx-auto flex w-full max-w-5xl flex-col gap-8 px-4 lg:flex-row'>
                                 <motion.section
-                                        className='w-full rounded-xl border border-payzone-indigo/40 bg-white/5 p-6 shadow-lg backdrop-blur-sm'
+                                        className='w-full rounded-xl border border-payzone-indigo/40 bg-white/80 p-6 shadow-lg backdrop-blur-sm'
                                         initial={{ opacity: 0, x: -20 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ duration: 0.4 }}
                                 >
-                                        <h1 className='mb-6 text-2xl font-bold text-payzone-gold'>{t("checkout.title")}</h1>
+                                        <h1 className='mb-6 text-2xl font-bold'>{t("checkout.title")}</h1>
                                         <form className='space-y-5' onSubmit={handleSubmit}>
                                                 <div className='space-y-2'>
-                                                        <label className='block text-sm font-medium text-white/80' htmlFor='customerName'>
+                                                        <label className='block text-sm font-medium' htmlFor='customerName'>
                                                                 {t("checkout.form.fullName")}
                                                         </label>
                                                         <input
@@ -263,14 +263,14 @@ const CheckoutPage = () => {
                                                                 type='text'
                                                                 value={customerName}
                                                                 onChange={(event) => setCustomerName(event.target.value)}
-                                                                className='w-full rounded-lg border border-payzone-indigo/40 bg-payzone-navy/60 px-4 py-2 text-white placeholder-white/40 focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
+                                                                className='w-full rounded-lg border border-payzone-indigo/40 bg-white px-4 py-2 text-[var(--text-dark)] placeholder-[var(--placeholder-color)] focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
                                                                 placeholder={t("checkout.form.fullNamePlaceholder")}
                                                                 required
                                                         />
                                                 </div>
 
                                                 <div className='space-y-2'>
-                                                        <label className='block text-sm font-medium text-white/80' htmlFor='whatsAppNumber'>
+                                                        <label className='block text-sm font-medium' htmlFor='whatsAppNumber'>
                                                                 {t("checkout.form.whatsApp")}
                                                         </label>
                                                         <input
@@ -278,7 +278,7 @@ const CheckoutPage = () => {
                                                                 type='tel'
                                                                 value={whatsAppNumber}
                                                                 onChange={handleWhatsAppChange}
-                                                                className='w-full rounded-lg border border-payzone-indigo/40 bg-payzone-navy/60 px-4 py-2 text-white placeholder-white/40 focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
+                                                                className='w-full rounded-lg border border-payzone-indigo/40 bg-white px-4 py-2 text-[var(--text-dark)] placeholder-[var(--placeholder-color)] focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
                                                                 placeholder={t("checkout.form.whatsAppPlaceholder")}
                                                                 required
                                                         />
@@ -286,7 +286,7 @@ const CheckoutPage = () => {
                                                 </div>
 
                                                 <div className='space-y-2'>
-                                                        <label className='block text-sm font-medium text-white/80' htmlFor='address'>
+                                                        <label className='block text-sm font-medium' htmlFor='address'>
                                                                 {t("checkout.form.address")}
                                                         </label>
                                                         <textarea
@@ -294,7 +294,7 @@ const CheckoutPage = () => {
                                                                 value={address}
                                                                 onChange={(event) => setAddress(event.target.value)}
                                                                 rows={4}
-                                                                className='w-full rounded-lg border border-payzone-indigo/40 bg-payzone-navy/60 px-4 py-2 text-white placeholder-white/40 focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
+                                                                className='w-full rounded-lg border border-payzone-indigo/40 bg-white px-4 py-2 text-[var(--text-dark)] placeholder-[var(--placeholder-color)] focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
                                                                 placeholder={t("checkout.form.addressPlaceholder")}
                                                                 required
                                                         />
@@ -303,7 +303,7 @@ const CheckoutPage = () => {
                                                 <motion.button
                                                         type='submit'
                                                         disabled={!isFormValid || isSubmitting}
-                                                        className='w-full rounded-lg bg-payzone-gold px-5 py-3 text-base font-semibold text-payzone-navy transition duration-300 hover:bg-[#b8873d] focus:outline-none focus:ring-4 focus:ring-payzone-indigo/40 disabled:cursor-not-allowed disabled:opacity-50'
+                                                        className='btn-primary w-full rounded-lg px-5 py-3 text-base font-semibold transition duration-300 focus:outline-none focus:ring-4 focus:ring-payzone-indigo/40 disabled:cursor-not-allowed disabled:opacity-50'
                                                         whileHover={{ scale: 1.02 }}
                                                         whileTap={{ scale: 0.97 }}
                                                 >
@@ -313,21 +313,21 @@ const CheckoutPage = () => {
                                 </motion.section>
 
                                 <motion.aside
-                                        className='w-full rounded-xl border border-payzone-indigo/40 bg-white/5 p-6 shadow-lg backdrop-blur-sm lg:max-w-sm'
+                                        className='w-full rounded-xl border border-payzone-indigo/40 bg-white/80 p-6 shadow-lg backdrop-blur-sm lg:max-w-sm'
                                         initial={{ opacity: 0, x: 20 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ duration: 0.4, delay: 0.1 }}
                                 >
-                                        <h2 className='text-xl font-semibold text-payzone-gold'>{t("checkout.summary.title")}</h2>
-                                        <ul className='mt-4 space-y-3 text-sm text-white/70'>
+                                        <h2 className='text-xl font-semibold'>{t("checkout.summary.title")}</h2>
+                                        <ul className='mt-4 space-y-3 text-sm'>
                                                 {cart.map((item) => {
                                                         const { price, discountedPrice, isDiscounted } = getProductPricing(item);
                                                         return (
                                                                 <li key={item._id} className='flex justify-between gap-4'>
-                                                                        <span className='font-medium text-white'>{item.name}</span>
-                                                                        <span className='flex flex-col items-end'>
+                                                                        <span className='font-medium'>{item.name}</span>
+                                                                        <span className='flex flex-col items-end text-[var(--text-dark)]'>
                                                                                 {isDiscounted && (
-                                                                                        <span className='text-xs text-white/50 line-through'>
+                                                                                        <span className='text-xs text-payzone-gold/80 line-through'>
                                                                                                 {formatNumberEn(item.quantity)} × {formatMRU(price)}
                                                                                         </span>
                                                                                 )}
@@ -340,7 +340,7 @@ const CheckoutPage = () => {
                                                 })}
                                         </ul>
 
-                                        <div className='mt-6 space-y-2 border-t border-white/10 pt-4 text-sm text-white/70'>
+                                        <div className='mt-6 space-y-2 border-t border-payzone-indigo/20 pt-4 text-sm'>
                                                 <div className='flex justify-between'>
                                                         <span>{t("checkout.summary.subtotal")}</span>
                                                         <span>{formatMRU(subtotal)}</span>
@@ -351,13 +351,13 @@ const CheckoutPage = () => {
                                                                 <span>-{formatMRU(savings)}</span>
                                                         </div>
                                                 )}
-                                                <div className='flex justify-between text-base font-semibold text-white'>
+                                                <div className='flex justify-between text-base font-semibold'>
                                                         <span>{t("checkout.summary.total")}</span>
                                                         <span>{formatMRU(total)}</span>
                                                 </div>
                                         </div>
 
-                                        <p className='mt-4 text-xs text-white/60'>{t("checkout.summary.notice")}</p>
+                                        <p className='mt-4 text-xs text-[var(--text-dark)] opacity-80'>{t("checkout.summary.notice")}</p>
                                 </motion.aside>
                         </div>
                 </div>
