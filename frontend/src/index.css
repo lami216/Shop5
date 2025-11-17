@@ -49,8 +49,31 @@
         .interactive-gradient:hover,
         .interactive-gradient:active {
                 background-image: linear-gradient(135deg, var(--color-accent), var(--color-text-primary));
-                color: var(--color-ivory) !important;
+                color: var(--color-text-primary) !important;
         }
+}
+
+.navbar {
+        background-color: rgba(245, 238, 227, 0.92);
+        color: #4a3524;
+        backdrop-filter: blur(12px);
+}
+
+.navbar a,
+.navbar button,
+.navbar svg {
+        color: #4a3524 !important;
+        fill: #4a3524 !important;
+}
+
+.navbar a:hover,
+.navbar button:hover,
+.navbar svg:hover,
+.navbar a:active,
+.navbar button:active,
+.navbar svg:active {
+        color: #6b4b32 !important;
+        fill: #6b4b32 !important;
 }
 
 .discount-switch {

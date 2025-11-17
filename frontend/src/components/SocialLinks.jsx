@@ -39,10 +39,17 @@ export default function SocialLinks() {
 
   if (items.length === 0) return null;
 
+  const baseButtonClasses =
+    "inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-colors duration-200 border shadow-sm";
+  const defaultButtonClasses = `${baseButtonClasses} border-brand-border bg-payzone-white/85 text-[#4A3524] hover:bg-payzone-gold/20`;
+  const whatsappButtonClasses = `${baseButtonClasses} border-[#4A3524] bg-[#F7F0E5] text-[#4A3524] shadow-md hover:bg-[#e9dfcf]`;
+
   return (
     <div className="w-full flex flex-wrap items-center justify-center gap-3 mt-8">
       {items.map(({ key, label, href, className }) => {
         const IconComponent = Icon[key];
+        const isWhatsapp = key === "whatsapp";
+        const buttonClasses = isWhatsapp ? whatsappButtonClasses : defaultButtonClasses;
 
         return (
           <a
@@ -50,11 +57,11 @@ export default function SocialLinks() {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="interactive-gradient inline-flex items-center gap-2 rounded-xl border border-brand-border bg-payzone-white/80 px-4 py-2 text-payzone-navy shadow-sm"
+            className={`${buttonClasses} ${className ?? ""}`.trim()}
             aria-label={label}
           >
-            <span className="inline-flex"><IconComponent /></span>
-            <span className="text-sm">{label}</span>
+            <span className="inline-flex text-inherit"><IconComponent /></span>
+            <span className="text-sm text-inherit">{label}</span>
           </a>
         );
       })}
