@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { UserPlus, Mail, Lock, User, ArrowLeft, Loader } from "lucide-react";
+import { UserPlus, Mail, Lock, User, ArrowLeft, Loader, Eye, EyeOff } from "lucide-react";
 import { motion } from "framer-motion";
 import useTranslation from "../hooks/useTranslation";
 import { useUserStore } from "../stores/useUserStore";
@@ -12,6 +12,10 @@ const SignUpPage = () => {
                 password: "",
                 confirmPassword: "",
         });
+        const [showPassword, setShowPassword] = useState({
+                password: false,
+                confirmPassword: false,
+        });
 
         const { signup, loading } = useUserStore();
         const { t } = useTranslation();
@@ -21,27 +25,59 @@ const SignUpPage = () => {
                 signup(formData);
         };
 
-        const renderField = (id, label, type, Icon, placeholder, valueKey) => (
-                <div>
-                        <label htmlFor={id} className='block text-sm font-medium text-white/80'>
-                                {label}
-                        </label>
-                        <div className='relative mt-1 rounded-md shadow-sm'>
-                                <div className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3'>
-                                        <Icon className='h-5 w-5 text-white/50' aria-hidden='true' />
+        const renderField = (id, label, type, Icon, placeholder, valueKey) => {
+                const isPasswordField = type === "password";
+                const inputType = isPasswordField && showPassword[valueKey] ? "text" : type;
+
+                return (
+                        <div>
+                                <label htmlFor={id} className='block text-sm font-medium text-payzone-navy'>
+                                        {label}
+                                </label>
+                                <div className='relative mt-1 rounded-md shadow-sm'>
+                                        <div
+                                                className={`pointer-events-none absolute inset-y-0 ${isPasswordField ? "right-12" : "right-0"} flex items-center pr-3`}
+                                        >
+                                                <Icon className='h-5 w-5 text-payzone-navy/50' aria-hidden='true' />
+                                        </div>
+                                        {isPasswordField && (
+                                                <button
+                                                        type='button'
+                                                        onClick={() =>
+                                                                setShowPassword((prev) => ({
+                                                                        ...prev,
+                                                                        [valueKey]: !prev[valueKey],
+                                                                }))
+                                                        }
+                                                        className='absolute inset-y-0 right-2 flex items-center text-payzone-navy/70 transition-colors duration-200 hover:text-payzone-navy focus:outline-none'
+                                                        aria-label={
+                                                                showPassword[valueKey]
+                                                                        ? t("auth.signup.hidePassword")
+                                                                        : t("auth.signup.showPassword")
+                                                        }
+                                                >
+                                                        {showPassword[valueKey] ? (
+                                                                <EyeOff className='h-5 w-5' aria-hidden='true' />
+                                                        ) : (
+                                                                <Eye className='h-5 w-5' aria-hidden='true' />
+                                                        )}
+                                                </button>
+                                        )}
+                                        <input
+                                                id={id}
+                                                type={inputType}
+                                                required
+                                                value={formData[valueKey]}
+                                                onChange={(e) => setFormData({ ...formData, [valueKey]: e.target.value })}
+                                                className={`block w-full rounded-md border border-payzone-indigo/40 bg-payzone-navy/60 px-3 py-2 ${
+                                                        isPasswordField ? "pr-24" : "pr-10"
+                                                } text-payzone-navy placeholder-payzone-navy/40 focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo sm:text-sm`}
+                                                placeholder={placeholder}
+                                        />
                                 </div>
-                                <input
-                                        id={id}
-                                        type={type}
-                                        required
-                                        value={formData[valueKey]}
-                                        onChange={(e) => setFormData({ ...formData, [valueKey]: e.target.value })}
-                                        className='block w-full rounded-md border border-payzone-indigo/40 bg-payzone-navy/60 px-3 py-2 pr-10 text-white placeholder-white/40 focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo sm:text-sm'
-                                        placeholder={placeholder}
-                                />
                         </div>
-                </div>
-        );
+                );
+        };
 
         return (
                 <div className='flex flex-col justify-center py-12 sm:px-6 lg:px-8'>
@@ -116,7 +152,7 @@ const SignUpPage = () => {
                                                 </button>
                                         </form>
 
-                                        <p className='mt-8 text-center text-sm text-white/70'>
+                                        <p className='mt-8 text-center text-sm text-payzone-navy/70'>
                                                 {t("auth.signup.prompt")} {" "}
                                                 <Link to='/login' className='font-medium text-payzone-indigo transition duration-300 hover:text-payzone-gold'>
                                                         {t("auth.signup.cta")}{" "}
