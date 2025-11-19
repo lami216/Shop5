@@ -182,10 +182,10 @@ const ProductDetailPage = () => {
                                                                 <div className='flex flex-wrap items-center gap-4 text-3xl font-semibold text-payzone-gold'>
                                                                         {isDiscounted ? (
                                                                                 <>
-                                                                                        <span className='text-2xl font-normal text-white/60 line-through'>
+                                                                                        <span className='old-price text-2xl font-normal'>
                                                                                                 {formatMRU(price)}
                                                                                         </span>
-                                                                                        <span className='text-4xl font-bold text-red-300'>
+                                                                                        <span className='new-price text-4xl font-bold'>
                                                                                                 {formatMRU(discountedPrice)}
                                                                                         </span>
                                                                                         <span className='rounded-full bg-red-600/80 px-3 py-1 text-base font-semibold text-white shadow'>

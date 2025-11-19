@@ -47,6 +47,15 @@
                 color: #4a3524 !important;
         }
 
+        .old-price {
+                color: #b0a39a;
+                text-decoration: line-through;
+        }
+
+        .new-price {
+                color: #e76f51;
+        }
+
         button[class*="bg-"],
         a[class*="bg-"],
         .interactive-gradient {
