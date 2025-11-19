@@ -474,15 +474,15 @@ const SearchBar = ({ variant = "global", categorySlug = null }) => {
                                                                                         <div className='flex flex-col items-end gap-1'>
                                                                                                 {isDiscounted ? (
                                                                                                         <>
-                                                                                                                <span className='text-xs text-payzone-white/60 line-through'>
+                                                                                                                <span className='old-price text-xs'>
                                                                                                                         {formatMRU(price)}
                                                                                                                 </span>
-                                                                                                                <span className='text-sm font-semibold text-payzone-gold'>
+                                                                                                                <span className='new-price text-sm font-semibold'>
                                                                                                                         {formatMRU(discountedPrice)}
                                                                                                                 </span>
                                                                                                         </>
                                                                                                 ) : (
-                                                                                                        <span className='text-sm font-semibold text-payzone-gold'>
+                                                                                                        <span className='new-price text-sm font-semibold'>
                                                                                                                 {formatMRU(price)}
                                                                                                         </span>
                                                                                                 )}

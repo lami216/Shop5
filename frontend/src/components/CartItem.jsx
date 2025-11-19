@@ -57,13 +57,15 @@ const CartItem = ({ item }) => {
 
                                 <div className='flex flex-wrap items-center gap-2 text-sm text-white/60'>
                                         <span>{t("cart.item.unitPrice")}</span>
-                                        <div className='flex items-center gap-2 text-lg font-semibold text-payzone-gold'>
+                                        <div className='flex items-center gap-2 text-lg font-semibold'>
                                                 {isDiscounted && (
-                                                        <span className='text-xs font-medium text-white/50 line-through'>
+                                                        <span className='old-price text-xs font-medium'>
                                                                 {formatMRU(originalPrice)}
                                                         </span>
                                                 )}
-                                                <span className='text-[clamp(1rem,2.2vw,1.15rem)]'>{formatMRU(priceValue)}</span>
+                                                <span className='new-price text-[clamp(1rem,2.2vw,1.15rem)] font-semibold'>
+                                                        {formatMRU(priceValue)}
+                                                </span>
                                         </div>
                                 </div>
 
