@@ -48,12 +48,13 @@
         }
 
         .old-price {
-                color: #b0a39a;
+                color: #b0b0b0;
                 text-decoration: line-through;
         }
 
         .new-price {
-                color: #e76f51;
+                color: #d46a6a;
+                font-weight: 700;
         }
 
         button[class*="bg-"],

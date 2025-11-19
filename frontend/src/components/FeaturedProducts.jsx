@@ -92,16 +92,16 @@ const FeaturedProducts = ({ featuredProducts }) => {
                                                                                                 <h3 className='product-name mb-2 text-lg font-semibold'>{product.name}</h3>
                                                                                                 <div className='mb-4 flex flex-wrap items-baseline gap-2'>
                                                                                                         {isDiscounted ? (
-                                                                                                                <>
-                                                                                                                        <span className='max-w-full break-words text-sm text-white/60 line-through'>
-                                                                                                                                {formatMRU(price)}
-                                                                                                                        </span>
-                                                                                                                        <span className='max-w-full break-words text-lg font-bold text-red-300'>
-                                                                                                                                {formatMRU(discountedPrice)}
-                                                                                                                        </span>
-                                                                                                                </>
+                                                                                                        <>
+                                                                                                                <span className='old-price max-w-full break-words text-sm'>
+                                                                                                                        {formatMRU(price)}
+                                                                                                                </span>
+                                                                                                                <span className='new-price max-w-full break-words text-lg font-semibold'>
+                                                                                                                        {formatMRU(discountedPrice)}
+                                                                                                                </span>
+                                                                                                        </>
                                                                                                         ) : (
-                                                                                                                <span className='max-w-full break-words text-lg font-medium text-payzone-gold'>
+                                                                                                                <span className='new-price max-w-full break-words text-lg font-semibold'>
                                                                                                                         {formatMRU(price)}
                                                                                                                 </span>
                                                                                                         )}
