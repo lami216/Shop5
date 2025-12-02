@@ -72,18 +72,18 @@ const Navbar = () => {
                                                                 <>
                                                                         <Link
                                                                                 to={'/signup'}
-                                                                                className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-gold px-4 py-2 font-semibold text-[#4A3524] shadow-sm hover:bg-payzone-gold/80'
-                                                                        >
-                                                                                <UserPlus size={18} />
-                                                                                {t("nav.signup")}
-                                                                        </Link>
-                                                                        <Link
-                                                                                to={'/login'}
-                                                                                className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-indigo/80 px-4 py-2 text-[#4A3524] shadow-sm hover:bg-payzone-indigo'
-                                                                        >
-                                                                                <LogIn size={18} />
-                                                                                {t("nav.login")}
-                                                                        </Link>
+                                                                        className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-gold px-3.5 py-1.5 text-sm font-semibold text-[#4A3524] shadow-sm hover:bg-payzone-gold/80'
+                                                                >
+                                                                        <UserPlus size={16} />
+                                                                        {t("nav.signup")}
+                                                                </Link>
+                                                                <Link
+                                                                        to={'/login'}
+                                                                        className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-indigo/80 px-3.5 py-1.5 text-sm text-[#4A3524] shadow-sm hover:bg-payzone-indigo'
+                                                                >
+                                                                        <LogIn size={16} />
+                                                                        {t("nav.login")}
+                                                                </Link>
                                                                 </>
                                                         )}
                                                 </div>

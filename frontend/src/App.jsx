@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
@@ -19,8 +19,6 @@ import { useCartStore } from "./stores/useCartStore";
 import PurchaseSuccessPage from "./pages/PurchaseSuccessPage";
 import PurchaseCancelPage from "./pages/PurchaseCancelPage";
 import CheckoutPage from "./pages/CheckoutPage";
-import BecomeDriverPage from "./pages/BecomeDriverPage";
-import CourierInviteSection from "./components/CourierInviteSection";
 
 function App() {
         const user = useUserStore((state) => state.user);
@@ -28,7 +26,6 @@ function App() {
         const checkingAuth = useUserStore((state) => state.checkingAuth);
         const initializeCart = useCartStore((state) => state.initializeCart);
         const getCartItems = useCartStore((state) => state.getCartItems);
-        const location = useLocation();
 
         useEffect(() => {
                 checkAuth();
@@ -45,8 +42,6 @@ function App() {
         }, [getCartItems, user]);
 
         if (checkingAuth) return <LoadingSpinner />;
-
-        const isHomePage = location.pathname === "/";
 
         return (
                 <div className='relative min-h-screen bg-brand-surface text-payzone-navy'>
@@ -67,11 +62,9 @@ function App() {
                                         <Route path='/checkout' element={<CheckoutPage />} />
                                         <Route path='/purchase-success' element={<PurchaseSuccessPage />} />
                                         <Route path='/purchase-cancel' element={<PurchaseCancelPage />} />
-                                        <Route path='/become-driver' element={<BecomeDriverPage />} />
                                 </Routes>
                         </div>
                         <Toaster />
-                        {isHomePage && <CourierInviteSection />}
                         <Footer />
                 </div>
         );
