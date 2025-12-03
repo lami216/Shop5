@@ -134,8 +134,26 @@
 
 @media (max-width: 768px) {
         .navbar .navbar-inner {
-                padding-top: 0.375rem;
-                padding-bottom: 0.375rem;
+                padding-top: 0.25rem;
+                padding-bottom: 0.25rem;
+        }
+
+        .mobile-navbar {
+                row-gap: 0.35rem;
+                column-gap: 0.5rem;
+        }
+
+        .mobile-auth-actions {
+                margin-left: auto;
+        }
+
+        .mobile-nav-row {
+                align-items: center;
+                column-gap: 0.75rem;
+        }
+
+        .mobile-nav-row nav {
+                gap: 0.75rem;
         }
 
         .main-content {
