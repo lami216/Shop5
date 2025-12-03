@@ -14,7 +14,7 @@ const Navbar = () => {
         const cartLink = (
                 <Link
                         to={'/cart'}
-                        className='relative group flex items-center gap-2 rounded-md border border-brand-border bg-payzone-white/70 px-4 py-2 text-sm font-semibold text-[#4A3524] shadow-sm hover:bg-payzone-gold/20'
+                        className='relative group flex items-center gap-2 rounded-md border border-brand-border bg-payzone-white/70 px-3.5 py-1.5 text-sm font-semibold text-[#4A3524] shadow-sm hover:bg-payzone-gold/20 md:px-4 md:py-2'
                 >
                         <ShoppingCart size={18} />
                         <span className='hidden sm:inline'>{t("nav.cart")}</span>
@@ -28,7 +28,7 @@ const Navbar = () => {
 
         return (
                 <header className='navbar fixed top-0 right-0 w-full border-b border-brand-border shadow-lg backdrop-blur-xl transition-all duration-300 z-40'>
-                        <div className='container mx-auto px-4 py-3'>
+                        <div className='container mx-auto px-4 py-2.5 md:py-3'>
                                 <div className='flex flex-wrap items-center justify-between gap-4'>
                                         <Link to='/' className='flex items-center gap-3 text-[#4A3524]'>
                                                 <img
@@ -62,27 +62,27 @@ const Navbar = () => {
                                                         {cartLink}
                                                         {user ? (
                                                                 <button
-                                                                        className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-white/70 px-4 py-2 text-[#4A3524] shadow-sm hover:bg-payzone-gold/20'
+                                                                        className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-white/70 px-3.5 py-1.5 text-[#4A3524] shadow-sm hover:bg-payzone-gold/20 md:px-4 md:py-2'
                                                                         onClick={logout}
                                                                 >
                                                                         <LogOut size={18} />
                                                                         <span className='hidden sm:inline'>{t("nav.logout")}</span>
                                                                 </button>
                                                         ) : (
-                                                                <>
+                                                                <> 
                                                                         <Link
                                                                                 to={'/signup'}
-                                                                        className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-gold px-3.5 py-1.5 text-sm font-semibold text-[#4A3524] shadow-sm hover:bg-payzone-gold/80'
-                                                                >
-                                                                        <UserPlus size={16} />
-                                                                        {t("nav.signup")}
-                                                                </Link>
-                                                                <Link
-                                                                        to={'/login'}
-                                                                        className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-indigo/80 px-3.5 py-1.5 text-sm text-[#4A3524] shadow-sm hover:bg-payzone-indigo'
-                                                                >
-                                                                        <LogIn size={16} />
-                                                                        {t("nav.login")}
+                                                                                className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-gold px-3 py-1 text-sm font-semibold text-[#4A3524] shadow-sm hover:bg-payzone-gold/80 md:px-3.5 md:py-1.5'
+                                                                        >
+                                                                                <UserPlus size={16} />
+                                                                                {t("nav.signup")}
+                                                                        </Link>
+                                                                        <Link
+                                                                                to={'/login'}
+                                                                                className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-indigo/80 px-3 py-1 text-sm text-[#4A3524] shadow-sm hover:bg-payzone-indigo md:px-3.5 md:py-1.5'
+                                                                        >
+                                                                                <LogIn size={16} />
+                                                                                {t("nav.login")}
                                                                 </Link>
                                                                 </>
                                                         )}
