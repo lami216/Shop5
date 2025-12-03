@@ -169,6 +169,10 @@
         .main-content {
                 padding-top: 4.25rem;
         }
+
+        .home-hero {
+                margin-top: 20px;
+        }
 }
 
 .discount-switch {
