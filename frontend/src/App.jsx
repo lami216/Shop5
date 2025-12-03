@@ -45,24 +45,26 @@ function App() {
 
         return (
                 <div className='relative min-h-screen bg-brand-surface text-payzone-navy'>
-                        <div className='relative z-50 pt-[5.25rem] md:pt-20'>
+                        <div className='relative z-50'>
                                 <Navbar />
-                                <Routes>
-                                        <Route path='/' element={<HomePage />} />
-                                        <Route path='/signup' element={!user ? <SignUpPage /> : <Navigate to='/' />} />
-                                        <Route path='/login' element={!user ? <LoginPage /> : <Navigate to='/' />} />
-                                        <Route
-                                                path='/secret-dashboard'
-                                                element={user?.role === "admin" ? <AdminPage /> : <Navigate to='/login' />}
-                                        />
-                                        <Route path='/category/:category' element={<CategoryPage />} />
-                                        <Route path='/products/:id' element={<ProductDetailPage />} />
-                                        <Route path='/search' element={<SearchPage />} />
-                                        <Route path='/cart' element={<CartPage />} />
-                                        <Route path='/checkout' element={<CheckoutPage />} />
-                                        <Route path='/purchase-success' element={<PurchaseSuccessPage />} />
-                                        <Route path='/purchase-cancel' element={<PurchaseCancelPage />} />
-                                </Routes>
+                                <main className='main-content md:pt-20'>
+                                        <Routes>
+                                                <Route path='/' element={<HomePage />} />
+                                                <Route path='/signup' element={!user ? <SignUpPage /> : <Navigate to='/' />} />
+                                                <Route path='/login' element={!user ? <LoginPage /> : <Navigate to='/' />} />
+                                                <Route
+                                                        path='/secret-dashboard'
+                                                        element={user?.role === "admin" ? <AdminPage /> : <Navigate to='/login' />}
+                                                />
+                                                <Route path='/category/:category' element={<CategoryPage />} />
+                                                <Route path='/products/:id' element={<ProductDetailPage />} />
+                                                <Route path='/search' element={<SearchPage />} />
+                                                <Route path='/cart' element={<CartPage />} />
+                                                <Route path='/checkout' element={<CheckoutPage />} />
+                                                <Route path='/purchase-success' element={<PurchaseSuccessPage />} />
+                                                <Route path='/purchase-cancel' element={<PurchaseCancelPage />} />
+                                        </Routes>
+                                </main>
                         </div>
                         <Toaster />
                         <Footer />
