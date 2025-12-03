@@ -145,6 +145,12 @@
 
         .mobile-auth-actions {
                 margin-left: auto;
+                transform: translateY(-4px);
+        }
+
+        .mobile-auth-actions > a,
+        .mobile-auth-actions > button {
+                transform: translateY(-2px);
         }
 
         .mobile-nav-row {
@@ -154,6 +160,10 @@
 
         .mobile-nav-row nav {
                 gap: 0.75rem;
+        }
+
+        .mobile-nav-row .md\:hidden {
+                transform: translateY(-3px);
         }
 
         .main-content {
