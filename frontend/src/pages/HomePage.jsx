@@ -21,7 +21,7 @@ const HomePage = () => {
 
         return (
                 <div className='relative min-h-screen overflow-hidden text-payzone-navy'>
-                        <div className='relative z-10 mx-auto max-w-7xl px-4 pt-12 pb-14 sm:px-6 sm:pt-16 sm:pb-16 lg:px-8'>
+                        <div className='home-hero relative z-10 mx-auto max-w-7xl px-4 pt-12 pb-14 sm:px-6 sm:pt-16 sm:pb-16 lg:px-8'>
                                 <h1 className='mb-3 text-center text-5xl font-bold sm:text-6xl'>
                                         <span className='block text-payzone-navy'>{t("home.titleLine1")}</span>
                                         <span className='bg-gradient-to-r from-payzone-gold via-payzone-gold/80 to-payzone-indigo bg-clip-text text-transparent'>
