@@ -9,7 +9,7 @@ const CourierInviteSection = () => {
                                         <p className='text-xs font-semibold uppercase tracking-[0.3em] text-payzone-navy/60'>فرصة عمل</p>
                                         <h2 className='text-2xl font-bold text-payzone-navy sm:text-3xl'>معك دراجة وتحب تشتغل توصيل؟</h2>
                                         <p className='max-w-3xl text-base text-payzone-navy/80 sm:text-lg'>
-                                                انضم لفريق الموصّلين لدينا واشتغل على طلبات بوتيك MK عبر واتساب
+                                                انضم لفريق الموصّلين لدينا واشتغل على طلبات بوتيك عبر واتساب
                                         </p>
                                 </div>
                                 <div className='flex w-full justify-center sm:w-auto'>

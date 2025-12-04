@@ -35,7 +35,7 @@ const BecomeDriverPage = () => {
 
                 setErrors({});
 
-                const message = `السلام عليكم، اسمي: ${fullName.trim()} من مدينة/حي: ${city.trim()} رقم الواتساب: ${whatsapp.trim()} أوقات العمل المتاحة: ${availability.trim()} لدي دراجة وأرغب في العمل في توصيل الطلبات مع بوتيك MK`;
+                const message = `السلام عليكم، اسمي: ${fullName.trim()} من مدينة/حي: ${city.trim()} رقم الواتساب: ${whatsapp.trim()} أوقات العمل المتاحة: ${availability.trim()} لدي دراجة وأرغب في العمل في توصيل الطلبات مع بوتيك`;
                 const encodedMessage = encodeURIComponent(message);
                 const whatsappUrl = `https://wa.me/22247764130?text=${encodedMessage}`;
 
@@ -55,7 +55,7 @@ const BecomeDriverPage = () => {
                                         </p>
                                         <h1 className='text-3xl font-bold sm:text-4xl'>نموذج الانضمام كموصّل</h1>
                                         <p className='text-base leading-relaxed text-payzone-navy/80'>
-                                                سجّل بياناتك لنساعدك على البدء في توصيل طلبات بوتيك MK عبر الواتساب. جميع الحقول مطلوبة لإتمام الطلب.
+                                                سجّل بياناتك لنساعدك على البدء في توصيل طلبات بوتيك عبر الواتساب. جميع الحقول مطلوبة لإتمام الطلب.
                                         </p>
                                 </header>
 
