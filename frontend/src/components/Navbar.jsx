@@ -52,7 +52,7 @@ const Navbar = () => {
                                                         <>
                                                                 <Link
                                                                         to={'/signup'}
-                                                                        className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-gold px-3 py-1 text-sm font-semibold text-[#3e3e3e] shadow-sm transition-colors duration-300 hover:bg-[rgba(212,180,105,0.85)] md:px-3.5 md:py-1.5'
+                                                                className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-gold px-3 py-1 text-sm font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-[rgba(212,180,105,0.85)] hover:text-white active:text-white md:px-3.5 md:py-1.5'
                                                                 >
                                                                         <UserPlus size={16} />
                                                                         {t("nav.signup")}
