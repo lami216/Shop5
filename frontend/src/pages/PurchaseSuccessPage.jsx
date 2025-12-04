@@ -147,7 +147,7 @@ const PurchaseSuccessPage = () => {
 
                                         {orderDetails?.orderNumber && (
                                                 <div className='mt-6 flex justify-center'>
-                                                        <div className='rounded-2xl border border-payzone-gold/40 bg-payzone-gold/10 px-6 py-3 text-center text-[#3e3e3e] shadow-sm'>
+                                                        <div className='rounded-2xl border border-[#e5d4d8] bg-white px-6 py-3 text-center text-payzone-gold shadow-sm'>
                                                                 <div className='text-sm font-semibold text-payzone-gold'>
                                                                         {t("purchase.success.details.orderNumberLabel", {
                                                                                 orderNumber: formatNumberEn(orderDetails.orderNumber),

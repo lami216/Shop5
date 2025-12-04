@@ -43,7 +43,7 @@ const GiftCouponCard = () => {
 
         return (
                 <motion.div
-                        className='space-y-4 rounded-xl border border-payzone-indigo/40 bg-white/5 p-4 shadow-sm backdrop-blur-sm sm:p-6'
+                        className='space-y-4 rounded-xl border border-brand-border bg-white p-4 shadow-sm sm:p-6'
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
@@ -56,7 +56,7 @@ const GiftCouponCard = () => {
                                         <input
                                                 type='text'
                                                 id='voucher'
-                                                className='block w-full rounded-lg border border-brand-border/70 bg-payzone-navy/60 p-2.5 text-sm text-payzone-gold placeholder-[rgba(212,180,105,0.6)] focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-gold/60'
+                                                className='block w-full rounded-lg border border-brand-border/70 bg-white p-2.5 text-sm text-payzone-gold placeholder-[rgba(30,30,30,0.6)] focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-gold/60'
                                                 placeholder={t("cart.coupon.placeholder")}
                                                 value={userInputCode}
                                                 onChange={(e) => setUserInputCode(e.target.value)}
@@ -66,7 +66,7 @@ const GiftCouponCard = () => {
 
                                 <motion.button
                                         type='button'
-                                        className='flex w-full items-center justify-center rounded-lg bg-payzone-gold px-5 py-2.5 text-sm font-semibold text-[#3e3e3e] transition-colors duration-300 hover:bg-[rgba(212,180,105,0.85)] focus:outline-none focus:ring-4 focus:ring-payzone-indigo/40'
+                                        className='flex w-full items-center justify-center rounded-lg bg-payzone-gold px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#222222] focus:outline-none focus:ring-4 focus:ring-payzone-indigo/40'
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         onClick={handleApplyCoupon}
@@ -75,7 +75,7 @@ const GiftCouponCard = () => {
                                 </motion.button>
                         </div>
                         {isCouponApplied && coupon?.code && (
-                                <div className='mt-4 rounded-lg border border-brand-border/60 bg-payzone-navy/60 p-4'>
+                                <div className='mt-4 rounded-lg border border-brand-border/60 bg-[#fce6ec] p-4'>
                                         <h3 className='text-lg font-medium text-payzone-gold'>
                                                 {t("cart.coupon.appliedTitle")}
                                         </h3>
@@ -89,7 +89,7 @@ const GiftCouponCard = () => {
 
                                         <motion.button
                                                 type='button'
-                                                className='mt-3 flex w-full items-center justify-center rounded-lg border border-brand-border bg-[rgba(255,255,255,0.05)] px-5 py-2.5 text-sm font-medium text-payzone-gold transition-colors duration-300 hover:bg-[rgba(212,180,105,0.12)] focus:outline-none focus:ring-4 focus:ring-payzone-gold/40'
+                                                className='mt-3 flex w-full items-center justify-center rounded-lg border border-brand-border bg-white px-5 py-2.5 text-sm font-medium text-payzone-gold transition-colors duration-300 hover:bg-[#fce6ec] focus:outline-none focus:ring-4 focus:ring-payzone-gold/40'
                                                 whileHover={{ scale: 1.05 }}
                                                 whileTap={{ scale: 0.95 }}
                                                 onClick={handleRemoveCoupon}

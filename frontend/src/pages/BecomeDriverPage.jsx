@@ -49,7 +49,7 @@ const BecomeDriverPage = () => {
                 <div className='min-h-screen bg-brand-surface px-4 py-12 text-payzone-gold' dir='rtl'>
                         <div className='mx-auto flex max-w-4xl flex-col gap-8 rounded-3xl bg-white/70 p-6 shadow-lg shadow-payzone-navy/5 backdrop-blur'>
                                 <header className='space-y-3 text-right'>
-                                        <p className='inline-flex items-center gap-2 rounded-full bg-payzone-gold/20 px-3 py-1 text-sm font-semibold text-[#3e3e3e]'>
+                                        <p className='inline-flex items-center gap-2 rounded-full bg-[#e28aae] px-3 py-1 text-sm font-semibold text-white'>
                                                 <Bike className='h-5 w-5 text-payzone-gold' />
                                                 <span>انضم إلى فريق الموصّلين</span>
                                         </p>

@@ -26,7 +26,7 @@ const PurchaseCancelPage = () => {
                                 <div className='space-y-4'>
                                         <Link
                                                 to={'/'}
-                                                className='flex w-full items-center justify-center gap-2 rounded-lg bg-payzone-gold px-4 py-2 font-bold text-[#3e3e3e] transition duration-300 hover:bg-[rgba(212,180,105,0.85)]'
+                                                className='flex w-full items-center justify-center gap-2 rounded-lg bg-payzone-gold px-4 py-2 font-bold text-white transition duration-300 hover:bg-[#222222]'
                                         >
                                                 <ArrowLeft size={18} />
                                                 {t("purchase.cancel.button")}
