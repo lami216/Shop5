@@ -112,7 +112,7 @@ const CategoryPage = () => {
                                         transition={{ duration: 0.8, delay: 0.2 }}
                                 >
                                         {!isFilteringCurrentCategory && displayedProducts?.length === 0 && (
-                                                <h2 className='col-span-full text-center text-3xl font-semibold text-white/70'>
+                                                <h2 className='col-span-full text-center text-3xl font-semibold text-black/70'>
                                                         {t("categoryPage.noProducts")}
                                                 </h2>
                                         )}

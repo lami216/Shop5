@@ -19,7 +19,7 @@ const Navbar = () => {
                         <ShoppingCart size={18} />
                         <span className='hidden sm:inline'>{t("nav.cart")}</span>
                         {cartItemCount > 0 && (
-                                <span className='absolute -top-2 -right-2 rounded-full border border-[#e28aae] bg-[#e28aae] px-2 py-0.5 text-xs font-semibold text-white shadow-sm transition duration-300 ease-in-out group-hover:bg-[#ec9cb8]'>
+                                <span className='absolute -top-2 -right-2 rounded-full border border-[#e28aae] bg-[#e28aae] px-2 py-0.5 text-xs font-semibold text-black shadow-sm transition duration-300 ease-in-out group-hover:bg-[#ec9cb8]'>
                                         {cartItemCount}
                                 </span>
                         )}

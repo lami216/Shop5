@@ -29,7 +29,7 @@ const CartItem = ({ item }) => {
 
         return (
                 <article
-                        className='grid grid-cols-[88px_minmax(0,1fr)] items-center gap-4 rounded-2xl border border-white/12 bg-white/5 p-4 text-white shadow-lg shadow-black/20 backdrop-blur-md transition duration-300 hover:border-payzone-gold/70 sm:grid-cols-[96px_minmax(0,1fr)] sm:p-5'
+                        className='grid grid-cols-[88px_minmax(0,1fr)] items-center gap-4 rounded-2xl border border-white/12 bg-white/5 p-4 text-black shadow-lg shadow-black/20 backdrop-blur-md transition duration-300 hover:border-payzone-gold/70 sm:grid-cols-[96px_minmax(0,1fr)] sm:p-5'
                         dir='rtl'
                 >
                         <Link
@@ -39,7 +39,7 @@ const CartItem = ({ item }) => {
                                 {item.image ? (
                                         <img src={item.image} alt={item.name} className='h-full w-full object-cover' />
                                 ) : (
-                                        <div className='flex h-full w-full items-center justify-center text-white/50'>
+                                        <div className='flex h-full w-full items-center justify-center text-black/50'>
                                                 <span className='text-xs'>{t("common.status.noImage")}</span>
                                         </div>
                                 )}
@@ -55,7 +55,7 @@ const CartItem = ({ item }) => {
                                         )}
                                 </div>
 
-                                <div className='flex flex-wrap items-center gap-2 text-sm text-white/60'>
+                                <div className='flex flex-wrap items-center gap-2 text-sm text-black/60'>
                                         <span>{t("cart.item.unitPrice")}</span>
                                         <div className='flex items-center gap-2 text-lg font-semibold'>
                                                 {isDiscounted && (
@@ -69,7 +69,7 @@ const CartItem = ({ item }) => {
                                         </div>
                                 </div>
 
-                                <div className='flex flex-wrap items-center justify-between gap-3 rounded-xl border border-white/10 bg-payzone-navy/70 px-3 py-2 text-sm text-white/80'>
+                                <div className='flex flex-wrap items-center justify-between gap-3 rounded-xl border border-white/10 bg-payzone-navy/70 px-3 py-2 text-sm text-black/80'>
                                         <div className='flex items-center gap-2'>
                                                 <label className='sr-only' htmlFor={`quantity-${item._id}`}>
                                                         {t("cart.item.chooseQuantity")}
@@ -77,21 +77,21 @@ const CartItem = ({ item }) => {
                                                 <button
                                                         type='button'
                                                         onClick={handleDecrease}
-                                                        className='inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:border-payzone-gold/80 hover:bg-payzone-navy/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-payzone-gold'
+                                                        className='inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-white/10 text-black transition hover:border-payzone-gold/80 hover:bg-payzone-navy/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-payzone-gold'
                                                         aria-label={t("cart.item.decrease")}
                                                 >
                                                         <Minus className='h-3.5 w-3.5' />
                                                 </button>
                                                 <span
                                                         id={`quantity-${item._id}`}
-                                                        className='flex h-8 min-w-[2.5rem] items-center justify-center rounded-lg bg-white/10 text-sm font-semibold text-white'
+                                                        className='flex h-8 min-w-[2.5rem] items-center justify-center rounded-lg bg-white/10 text-sm font-semibold text-black'
                                                 >
                                                         {formatNumberEn(quantityValue)}
                                                 </span>
                                                 <button
                                                         type='button'
                                                         onClick={handleIncrease}
-                                                        className='inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:border-payzone-gold/80 hover:bg-payzone-navy/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-payzone-gold'
+                                                        className='inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-white/10 text-black transition hover:border-payzone-gold/80 hover:bg-payzone-navy/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-payzone-gold'
                                                         aria-label={t("cart.item.increase")}
                                                 >
                                                         <Plus className='h-3.5 w-3.5' />

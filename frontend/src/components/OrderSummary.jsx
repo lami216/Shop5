@@ -27,7 +27,7 @@ const OrderSummary = () => {
 
         return (
                 <motion.section
-                        className='space-y-5 rounded-3xl border border-white/12 bg-white/5 p-6 text-white shadow-xl shadow-black/20 backdrop-blur-md'
+                        className='space-y-5 rounded-3xl border border-white/12 bg-white/5 p-6 text-black shadow-xl shadow-black/20 backdrop-blur-md'
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
@@ -37,16 +37,16 @@ const OrderSummary = () => {
                                 {t("cart.summary.title")}
                         </h2>
 
-                        <div className='space-y-3 rounded-2xl border border-white/12 bg-payzone-navy/70 p-5 text-[clamp(0.95rem,2.4vw,1rem)] text-white/80 shadow-inner'>
+                        <div className='space-y-3 rounded-2xl border border-white/12 bg-payzone-navy/70 p-5 text-[clamp(0.95rem,2.4vw,1rem)] text-black/80 shadow-inner'>
                                 <div className='flex items-center justify-between'>
                                         <span>{t("cart.summary.productsCount")}</span>
-                                        <span className='text-[clamp(1.05rem,2.6vw,1.2rem)] font-semibold text-white'>
+                                        <span className='text-[clamp(1.05rem,2.6vw,1.2rem)] font-semibold text-black'>
                                                 {formatNumberEn(totalQuantity)}
                                         </span>
                                 </div>
                                 <div className='flex items-center justify-between border-t border-white/12 pt-3'>
                                         <span>{t("cart.summary.discountedSubtotal")}</span>
-                                        <span className='text-[clamp(1.05rem,2.6vw,1.2rem)] font-semibold text-white'>
+                                        <span className='text-[clamp(1.05rem,2.6vw,1.2rem)] font-semibold text-black'>
                                                 {formatMRU(discountedSubtotal)}
                                         </span>
                                 </div>
@@ -58,7 +58,7 @@ const OrderSummary = () => {
                                 )}
                                 <div className='flex items-center justify-between border-t border-white/12 pt-3 text-[clamp(1.1rem,2.8vw,1.3rem)] font-semibold'>
                                         <span className='text-payzone-gold'>{t("cart.summary.grandTotal")}</span>
-                                        <span className='text-white'>{formatMRU(total)}</span>
+                                        <span className='text-black'>{formatMRU(total)}</span>
                                 </div>
                         </div>
 
