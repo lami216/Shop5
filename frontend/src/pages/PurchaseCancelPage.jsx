@@ -16,12 +16,12 @@ const PurchaseCancelPage = () => {
                                 <div className='flex justify-center'>
                                         <XCircle className='mb-4 h-16 w-16 text-payzone-indigo' />
                                 </div>
-                                <h1 className='mb-2 text-center text-2xl font-bold text-white sm:text-3xl'>
+                                <h1 className='mb-2 text-center text-2xl font-bold text-black sm:text-3xl'>
                                         {t("purchase.cancel.title")}
                                 </h1>
-                                <p className='mb-6 text-center text-white/80'>{t("purchase.cancel.message")}</p>
+                                <p className='mb-6 text-center text-black/80'>{t("purchase.cancel.message")}</p>
                                 <div className='mb-6 rounded-lg border border-payzone-indigo/40 bg-payzone-navy/60 p-4'>
-                                        <p className='text-center text-sm text-white/70'>{t("purchase.cancel.help")}</p>
+                                        <p className='text-center text-sm text-black/70'>{t("purchase.cancel.help")}</p>
                                 </div>
                                 <div className='space-y-4'>
                                         <Link

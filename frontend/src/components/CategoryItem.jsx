@@ -15,7 +15,7 @@ const CategoryItem = ({ category }) => {
                                                 loading='lazy'
                                         />
                                         <div className='absolute bottom-0 left-0 right-0 z-20 p-5'>
-                                                <h3 className='mb-1 text-2xl font-semibold text-white'>{category.name}</h3>
+                                                <h3 className='mb-1 text-2xl font-semibold text-black'>{category.name}</h3>
                                                 <p className='text-sm text-payzone-gold/90'>
                                                         {t("categories.explore", { category: category.name })}
                                                 </p>

@@ -88,7 +88,7 @@ const ProductDetailPage = () => {
                         <div className='relative min-h-screen text-payzone-white'>
                                 <div className='relative z-10 mx-auto max-w-4xl px-4 py-24 text-center'>
                                         <h1 className='text-3xl font-semibold text-payzone-gold'>{t("products.detail.notFound.title")}</h1>
-                                        <p className='mt-4 text-white/70'>{t("products.detail.notFound.description")}</p>
+                                        <p className='mt-4 text-black/70'>{t("products.detail.notFound.description")}</p>
                                 </div>
                         </div>
                 );
@@ -136,7 +136,7 @@ const ProductDetailPage = () => {
                                                                         className='h-full w-full object-contain'
                                                                 />
                                                         ) : (
-                                                                <div className='text-white/60'>{t("common.status.noImage")}</div>
+                                                                <div className='text-black/60'>{t("common.status.noImage")}</div>
                                                         )}
                                                 </div>
                                                 {galleryImages.length > 1 && (
@@ -172,13 +172,13 @@ const ProductDetailPage = () => {
                                                                 </p>
                                                         )}
                                                         <div className='space-y-2'>
-                                                                <p className='text-sm font-semibold text-white/70'>الإسم</p>
+                                                                <p className='text-sm font-semibold text-black/70'>الإسم</p>
                                                                 <h1 className='product-name text-3xl font-bold'>
                                                                         {selectedProduct.name}
                                                                 </h1>
                                                         </div>
                                                         <div className='space-y-2'>
-                                                                <p className='text-sm font-semibold text-white/70'>السعر</p>
+                                                                <p className='text-sm font-semibold text-black/70'>السعر</p>
                                                                 <div className='flex flex-wrap items-center gap-4 text-3xl font-semibold text-payzone-gold'>
                                                                         {isDiscounted ? (
                                                                                 <>
@@ -199,26 +199,26 @@ const ProductDetailPage = () => {
                                                         </div>
                                                 </div>
 
-                                                <div className='flex flex-wrap items-center gap-3 text-white/80'>
-                                                        <span className='text-sm font-medium text-white/70'>
+                                                <div className='flex flex-wrap items-center gap-3 text-black/80'>
+                                                        <span className='text-sm font-medium text-black/70'>
                                                                 {t("cart.item.chooseQuantity")}
                                                         </span>
                                                         <div className='flex items-center gap-3'>
                                                                 <button
                                                                         type='button'
                                                                         onClick={handleDecreaseQuantity}
-                                                                        className='inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:border-payzone-gold/80 hover:bg-payzone-navy/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-payzone-gold'
+                                                                        className='inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/10 text-black transition hover:border-payzone-gold/80 hover:bg-payzone-navy/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-payzone-gold'
                                                                         aria-label={t("cart.item.decrease")}
                                                                 >
                                                                         <Minus className='h-4 w-4' />
                                                                 </button>
-                                                                <span className='flex h-9 min-w-[3rem] items-center justify-center rounded-xl bg-white/10 text-base font-semibold text-white'>
+                                                                <span className='flex h-9 min-w-[3rem] items-center justify-center rounded-xl bg-white/10 text-base font-semibold text-black'>
                                                                         {quantity}
                                                                 </span>
                                                                 <button
                                                                         type='button'
                                                                         onClick={handleIncreaseQuantity}
-                                                                        className='inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:border-payzone-gold/80 hover:bg-payzone-navy/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-payzone-gold'
+                                                                        className='inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/10 text-black transition hover:border-payzone-gold/80 hover:bg-payzone-navy/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-payzone-gold'
                                                                         aria-label={t("cart.item.increase")}
                                                                 >
                                                                         <Plus className='h-4 w-4' />
@@ -226,7 +226,7 @@ const ProductDetailPage = () => {
                                                         </div>
                                                 </div>
 
-                                                <div className='space-y-3 text-white/80'>
+                                                <div className='space-y-3 text-black/80'>
                                                         <h2 className='text-lg font-semibold text-payzone-gold'>
                                                                 {t("products.detail.descriptionTitle")}
                                                         </h2>
