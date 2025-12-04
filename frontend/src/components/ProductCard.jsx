@@ -28,7 +28,7 @@ const ProductCard = ({ product }) => {
         };
 
         return (
-                <div className='group relative flex w-full flex-col overflow-hidden rounded-xl border border-payzone-indigo/30 bg-white/5 shadow-lg transition-all duration-300 hover:border-payzone-gold/60 hover:shadow-xl sm:aspect-[3/4] lg:aspect-square'>
+                <div className='group relative flex w-full flex-col overflow-hidden rounded-xl border border-brand-border bg-white shadow-lg transition-all duration-300 hover:border-[#d9c2c7] hover:shadow-xl sm:aspect-[3/4] lg:aspect-square'>
                         <Link
                                 to={`/products/${product._id}`}
                                 className='relative aspect-[4/5] w-full overflow-hidden min-h-[14rem] sm:min-h-0 sm:aspect-square'
@@ -70,7 +70,7 @@ const ProductCard = ({ product }) => {
                                         )}
                                 </div>
                                 <button
-                                        className='mt-auto flex items-center justify-center gap-2 rounded-lg bg-payzone-gold px-5 py-2 text-sm font-medium text-[#3e3e3e] transition-colors duration-300 hover:bg-[rgba(212,180,105,0.85)] focus:outline-none focus:ring-4 focus:ring-payzone-indigo/40'
+                                        className='mt-auto flex items-center justify-center gap-2 rounded-lg bg-payzone-gold px-5 py-2 text-sm font-medium text-white transition-colors duration-300 hover:bg-[#222222] focus:outline-none focus:ring-4 focus:ring-payzone-indigo/40'
                                         onClick={handleAddToCart}
                                 >
                                         <ShoppingCart size={20} />
