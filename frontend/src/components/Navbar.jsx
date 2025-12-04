@@ -33,7 +33,7 @@ const Navbar = () => {
                                         <Link to='/' className='order-1 flex items-center gap-3 text-[#4A3524]'>
                                                 <img
                                                         src='/logo.png'
-                                                        alt='شعار بوتيك MK'
+                                                        alt='شعار بوتيك'
                                                         className='h-12 w-12 object-contain drop-shadow-[0_4px_12px_rgba(16,41,84,0.35)]'
                                                 />
                                                 <span className='text-2xl font-semibold uppercase tracking-wide'>{t("common.appName")}</span>
