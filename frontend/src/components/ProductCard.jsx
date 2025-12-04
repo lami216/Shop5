@@ -46,7 +46,7 @@ const ProductCard = ({ product }) => {
                                                 alt={product.name}
                                         />
                                 ) : (
-                                        <div className='flex h-full w-full items-center justify-center bg-payzone-navy/70 text-sm text-white/60'>
+                                        <div className='flex h-full w-full items-center justify-center bg-payzone-navy/70 text-sm text-black/60'>
                                                 {t("common.status.noImage")}
                                         </div>
                                 )}

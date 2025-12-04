@@ -102,7 +102,7 @@ const PurchaseSuccessPage = () => {
 
         if (isProcessing)
                 return (
-                        <div className='flex h-screen items-center justify-center text-white'>
+                        <div className='flex h-screen items-center justify-center text-black'>
                                 {t("purchase.success.processing")}
                         </div>
                 );
@@ -138,7 +138,7 @@ const PurchaseSuccessPage = () => {
                                                 <button
                                                         type='button'
                                                         onClick={() => navigate("/")}
-                                                        className='inline-flex min-h-[3.25rem] min-w-[14rem] items-center justify-center gap-2 rounded-full bg-payzone-navy px-8 text-base font-semibold text-white shadow-lg transition hover:bg-payzone-navy/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-payzone-navy/60'
+                                                        className='inline-flex min-h-[3.25rem] min-w-[14rem] items-center justify-center gap-2 rounded-full bg-payzone-navy px-8 text-base font-semibold text-black shadow-lg transition hover:bg-payzone-navy/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-payzone-navy/60'
                                                 >
                                                         <ArrowRight className='h-5 w-5' style={{ transform: "scaleX(-1)" }} />
                                                         {t("purchase.success.backToStore")}

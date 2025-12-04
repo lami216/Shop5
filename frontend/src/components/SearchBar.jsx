@@ -381,7 +381,7 @@ const SearchBar = ({ variant = "global", categorySlug = null }) => {
                                                         <button
                                                                 type='button'
                                                                 onClick={handleClear}
-                                                                className='absolute left-3 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white/70 transition hover:bg-white/20'
+                                                                className='absolute left-3 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-black/70 transition hover:bg-white/20'
                                                                 aria-label={t("search.clear")}
                                                         >
                                                                 <X className='h-4 w-4' />
