@@ -135,7 +135,7 @@ const SignUpPage = () => {
 
                                                 <button
                                                         type='submit'
-                                                        className='flex w-full items-center justify-center gap-2 rounded-md bg-payzone-gold px-4 py-2 text-sm font-semibold text-[#FFFFFF] transition duration-300 hover:bg-[#222222] hover:text-[#FFFFFF] active:text-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-payzone-indigo/60 disabled:opacity-50'
+                                                        className='signup-submit-button flex w-full items-center justify-center gap-2 rounded-md bg-payzone-gold px-4 py-2 text-sm font-semibold text-[#FFFFFF] transition duration-300 hover:bg-[#222222] hover:text-[#FFFFFF] active:text-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-payzone-indigo/60 disabled:opacity-50'
                                                         disabled={loading}
                                                 >
                                                         {loading ? (
