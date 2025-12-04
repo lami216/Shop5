@@ -106,15 +106,25 @@
 
         .checkout-page .btn-primary {
                 background-color: var(--color-accent);
-                color: var(--text-dark) !important;
+                color: #ffffff !important;
                 border: 1px solid var(--color-border);
         }
 
         .checkout-page .btn-primary:hover,
         .checkout-page .btn-primary:focus-visible {
                 background-color: #222222;
-                color: var(--color-text-secondary) !important;
+                color: #ffffff !important;
         }
+}
+
+.signup-submit-button {
+        color: #ffffff !important;
+}
+
+.signup-submit-button:hover,
+.signup-submit-button:active,
+.signup-submit-button:focus-visible {
+        color: #ffffff !important;
 }
 
 .navbar {
