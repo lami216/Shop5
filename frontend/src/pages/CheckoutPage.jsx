@@ -178,7 +178,7 @@ const CheckoutPage = () => {
                         requestPayload.couponCode = coupon.code;
                 }
 
-                const STORE_WHATSAPP_NUMBER = "22247764130";
+        const STORE_WHATSAPP_NUMBER = "22249639577";
 
                 setIsSubmitting(true);
 
