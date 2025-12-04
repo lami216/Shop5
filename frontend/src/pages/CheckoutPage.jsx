@@ -327,7 +327,7 @@ const CheckoutPage = () => {
 
                                                 <div className='space-y-3'>
                                                         <div className='space-y-1'>
-                                                                <p className='text-sm font-medium text-payzone-navy'>
+                                                                <p className='text-sm font-medium text-payzone-gold'>
                                                                         {t("checkout.form.mapTitle")}
                                                                 </p>
                                                                 <div className='overflow-hidden rounded-xl border border-payzone-indigo/30 bg-white/70 shadow-sm'>
@@ -339,7 +339,7 @@ const CheckoutPage = () => {
                                                                                                 className='h-64 w-full object-cover'
                                                                                         />
                                                                                 ) : (
-                                                                                        <div className='flex h-64 w-full flex-col items-center justify-center gap-2 bg-white/60 px-4 text-center text-payzone-navy'>
+                                                                                        <div className='flex h-64 w-full flex-col items-center justify-center gap-2 bg-white/60 px-4 text-center text-payzone-gold'>
                                                                                                 <p className='text-base font-semibold'>
                                                                                                         {t("checkout.form.locationCoordinates", {
                                                                                                                 lat: location.lat.toFixed(5),
@@ -357,7 +357,7 @@ const CheckoutPage = () => {
                                                                                         </div>
                                                                                 )
                                                                         ) : (
-                                                                                <div className='flex h-64 w-full items-center justify-center bg-white/50 text-payzone-navy/70'>
+                                                                                <div className='flex h-64 w-full items-center justify-center bg-white/50 text-payzone-gold/70'>
                                                                                         <span>{t("checkout.form.locationPlaceholder")}</span>
                                                                                 </div>
                                                                         )}
@@ -378,7 +378,7 @@ const CheckoutPage = () => {
                                                                                 : t("checkout.form.shareLocationButton")}
                                                                 </motion.button>
                                                                 {locationError && (
-                                                                        <p className='text-sm text-payzone-navy/70'>
+                                                                        <p className='text-sm text-payzone-gold/70'>
                                                                                 {t("checkout.form.locationError")}
                                                                         </p>
                                                                 )}

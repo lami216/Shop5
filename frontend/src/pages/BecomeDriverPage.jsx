@@ -46,15 +46,15 @@ const BecomeDriverPage = () => {
         };
 
         return (
-                <div className='min-h-screen bg-brand-surface px-4 py-12 text-payzone-navy' dir='rtl'>
+                <div className='min-h-screen bg-brand-surface px-4 py-12 text-payzone-gold' dir='rtl'>
                         <div className='mx-auto flex max-w-4xl flex-col gap-8 rounded-3xl bg-white/70 p-6 shadow-lg shadow-payzone-navy/5 backdrop-blur'>
                                 <header className='space-y-3 text-right'>
-                                        <p className='inline-flex items-center gap-2 rounded-full bg-payzone-gold/20 px-3 py-1 text-sm font-semibold text-payzone-navy'>
-                                                <Bike className='h-5 w-5 text-payzone-navy' />
+                                        <p className='inline-flex items-center gap-2 rounded-full bg-payzone-gold/20 px-3 py-1 text-sm font-semibold text-[#3e3e3e]'>
+                                                <Bike className='h-5 w-5 text-payzone-gold' />
                                                 <span>انضم إلى فريق الموصّلين</span>
                                         </p>
                                         <h1 className='text-3xl font-bold sm:text-4xl'>نموذج الانضمام كموصّل</h1>
-                                        <p className='text-base leading-relaxed text-payzone-navy/80'>
+                                        <p className='text-base leading-relaxed text-payzone-gold/80'>
                                                 سجّل بياناتك لنساعدك على البدء في توصيل طلبات بوتيك عبر الواتساب. جميع الحقول مطلوبة لإتمام الطلب.
                                         </p>
                                 </header>
@@ -62,7 +62,7 @@ const BecomeDriverPage = () => {
                                 <form className='space-y-6' onSubmit={handleSubmit} noValidate>
                                         <div className='grid gap-6 sm:grid-cols-2'>
                                                 <div className='space-y-2'>
-                                                        <label className='block text-sm font-semibold text-payzone-navy' htmlFor='fullName'>
+                                                        <label className='block text-sm font-semibold text-payzone-gold' htmlFor='fullName'>
                                                                 الاسم الكامل
                                                         </label>
                                                         <input
@@ -71,13 +71,13 @@ const BecomeDriverPage = () => {
                                                                 type='text'
                                                                 value={formData.fullName}
                                                                 onChange={handleChange("fullName")}
-                                                                className='w-full rounded-2xl border border-brand-border/80 bg-white/80 px-4 py-3 text-payzone-navy shadow-sm shadow-payzone-navy/5 outline-none ring-payzone-gold/50 transition duration-200 ease-in-out focus:border-payzone-gold focus:ring-2'
+                                                                className='w-full rounded-2xl border border-brand-border/80 bg-white/80 px-4 py-3 text-payzone-gold shadow-sm shadow-payzone-navy/5 outline-none ring-payzone-gold/50 transition duration-200 ease-in-out focus:border-payzone-gold focus:ring-2'
                                                                 placeholder='اكتب اسمك الثلاثي'
                                                         />
                                                         {errors.fullName && <p className='text-sm text-red-600'>{errors.fullName}</p>}
                                                 </div>
                                                 <div className='space-y-2'>
-                                                        <label className='block text-sm font-semibold text-payzone-navy' htmlFor='city'>
+                                                        <label className='block text-sm font-semibold text-payzone-gold' htmlFor='city'>
                                                                 المدينة/الحي
                                                         </label>
                                                         <input
@@ -86,13 +86,13 @@ const BecomeDriverPage = () => {
                                                                 type='text'
                                                                 value={formData.city}
                                                                 onChange={handleChange("city")}
-                                                                className='w-full rounded-2xl border border-brand-border/80 bg-white/80 px-4 py-3 text-payzone-navy shadow-sm shadow-payzone-navy/5 outline-none ring-payzone-gold/50 transition duration-200 ease-in-out focus:border-payzone-gold focus:ring-2'
+                                                                className='w-full rounded-2xl border border-brand-border/80 bg-white/80 px-4 py-3 text-payzone-gold shadow-sm shadow-payzone-navy/5 outline-none ring-payzone-gold/50 transition duration-200 ease-in-out focus:border-payzone-gold focus:ring-2'
                                                                 placeholder='مثال: نواكشوط - تفرغ زينه'
                                                         />
                                                         {errors.city && <p className='text-sm text-red-600'>{errors.city}</p>}
                                                 </div>
                                                 <div className='space-y-2'>
-                                                        <label className='block text-sm font-semibold text-payzone-navy' htmlFor='whatsapp'>
+                                                        <label className='block text-sm font-semibold text-payzone-gold' htmlFor='whatsapp'>
                                                                 رقم الواتساب
                                                         </label>
                                                         <input
@@ -101,13 +101,13 @@ const BecomeDriverPage = () => {
                                                                 type='text'
                                                                 value={formData.whatsapp}
                                                                 onChange={handleChange("whatsapp")}
-                                                                className='w-full rounded-2xl border border-brand-border/80 bg-white/80 px-4 py-3 text-payzone-navy shadow-sm shadow-payzone-navy/5 outline-none ring-payzone-gold/50 transition duration-200 ease-in-out focus:border-payzone-gold focus:ring-2'
+                                                                className='w-full rounded-2xl border border-brand-border/80 bg-white/80 px-4 py-3 text-payzone-gold shadow-sm shadow-payzone-navy/5 outline-none ring-payzone-gold/50 transition duration-200 ease-in-out focus:border-payzone-gold focus:ring-2'
                                                                 placeholder='222xxxxxxx'
                                                         />
                                                         {errors.whatsapp && <p className='text-sm text-red-600'>{errors.whatsapp}</p>}
                                                 </div>
                                                 <div className='space-y-2'>
-                                                        <label className='block text-sm font-semibold text-payzone-navy' htmlFor='availability'>
+                                                        <label className='block text-sm font-semibold text-payzone-gold' htmlFor='availability'>
                                                                 أوقات العمل المتاحة
                                                         </label>
                                                         <textarea
@@ -116,7 +116,7 @@ const BecomeDriverPage = () => {
                                                                 rows={2}
                                                                 value={formData.availability}
                                                                 onChange={handleChange("availability")}
-                                                                className='w-full rounded-2xl border border-brand-border/80 bg-white/80 px-4 py-3 text-payzone-navy shadow-sm shadow-payzone-navy/5 outline-none ring-payzone-gold/50 transition duration-200 ease-in-out focus:border-payzone-gold focus:ring-2'
+                                                                className='w-full rounded-2xl border border-brand-border/80 bg-white/80 px-4 py-3 text-payzone-gold shadow-sm shadow-payzone-navy/5 outline-none ring-payzone-gold/50 transition duration-200 ease-in-out focus:border-payzone-gold focus:ring-2'
                                                                 placeholder='مثال: من 10 صباحاً إلى 6 مساءً، كل الأيام ما عدا الجمعة'
                                                         />
                                                         {errors.availability && <p className='text-sm text-red-600'>{errors.availability}</p>}
@@ -131,9 +131,9 @@ const BecomeDriverPage = () => {
                                                         className='courier-cta-button flex w-full flex-row-reverse items-center justify-center gap-3 px-8 py-3 text-lg font-semibold sm:w-auto'
                                                 >
                                                         <span>إرسال طلب الانضمام</span>
-                                                        <Bike className='h-5 w-5 text-payzone-navy' />
+                                                        <Bike className='h-5 w-5 text-payzone-gold' />
                                                 </button>
-                                                <p className='text-sm text-payzone-navy/70'>سيتم فتح واتساب في نافذة جديدة مع رسالة جاهزة.</p>
+                                                <p className='text-sm text-payzone-gold/70'>سيتم فتح واتساب في نافذة جديدة مع رسالة جاهزة.</p>
                                         </div>
                                 </form>
                         </div>

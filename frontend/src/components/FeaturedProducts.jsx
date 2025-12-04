@@ -108,7 +108,7 @@ const FeaturedProducts = ({ featuredProducts }) => {
                                                                                                 </div>
                                                                                                 <button
                                                                                                         onClick={() => addToCart(enrichedProduct)}
-                                                                                                        className='flex w-full items-center justify-center gap-2 rounded bg-payzone-gold py-2 px-4 font-semibold text-payzone-navy transition-colors duration-300 hover:bg-[#b8873d]'
+                                                                                                        className='flex w-full items-center justify-center gap-2 rounded bg-payzone-gold py-2 px-4 font-semibold text-[#3e3e3e] transition-colors duration-300 hover:bg-[rgba(212,180,105,0.85)]'
                                                                                                 >
                                                                                                         <ShoppingCart className='h-5 w-5' />
                                                                                                         {t("common.actions.addToCart")}
@@ -122,27 +122,27 @@ const FeaturedProducts = ({ featuredProducts }) => {
                                         </div>
                                         <button
                                                 onClick={prevSlide}
-                                                disabled={isStartDisabled}
-                                                className={`absolute top-1/2 -right-4 flex -translate-y-1/2 transform items-center justify-center rounded-full p-2 transition-colors duration-300 ${
-                                                        isStartDisabled
-                                                                ? "cursor-not-allowed bg-white/10 text-white/40"
-                                                                : "bg-payzone-indigo text-white hover:bg-[#3b3ad6]"
-                                                }`}
-                                        >
-                                                <ChevronRight className='h-6 w-6' />
-                                        </button>
+                                                        disabled={isStartDisabled}
+                                                        className={`absolute top-1/2 -right-4 flex -translate-y-1/2 transform items-center justify-center rounded-full p-2 transition-colors duration-300 ${
+                                                                isStartDisabled
+                                                                ? "cursor-not-allowed bg-[rgba(255,255,255,0.08)] text-payzone-gold/40"
+                                                                : "bg-[rgba(255,255,255,0.08)] text-payzone-gold hover:bg-[rgba(212,180,105,0.12)]"
+                                                        }`}
+                                                >
+                                                        <ChevronRight className='h-6 w-6' />
+                                                </button>
 
                                         <button
                                                 onClick={nextSlide}
-                                                disabled={isEndDisabled}
-                                                className={`absolute top-1/2 -left-4 flex -translate-y-1/2 transform items-center justify-center rounded-full p-2 transition-colors duration-300 ${
-                                                        isEndDisabled
-                                                                ? "cursor-not-allowed bg-white/10 text-white/40"
-                                                                : "bg-payzone-indigo text-white hover:bg-[#3b3ad6]"
-                                                }`}
-                                        >
-                                                <ChevronLeft className='h-6 w-6' />
-                                        </button>
+                                                        disabled={isEndDisabled}
+                                                        className={`absolute top-1/2 -left-4 flex -translate-y-1/2 transform items-center justify-center rounded-full p-2 transition-colors duration-300 ${
+                                                                isEndDisabled
+                                                                ? "cursor-not-allowed bg-[rgba(255,255,255,0.08)] text-payzone-gold/40"
+                                                                : "bg-[rgba(255,255,255,0.08)] text-payzone-gold hover:bg-[rgba(212,180,105,0.12)]"
+                                                        }`}
+                                                >
+                                                        <ChevronLeft className='h-6 w-6' />
+                                                </button>
                                 </div>
                         </div>
                 </div>

@@ -14,12 +14,12 @@ const Navbar = () => {
         const cartLink = (
                 <Link
                         to={'/cart'}
-                        className='relative group flex items-center gap-2 rounded-md border border-brand-border bg-payzone-white/70 px-3.5 py-1.5 text-sm font-semibold text-[#4A3524] shadow-sm hover:bg-payzone-gold/20 md:px-4 md:py-2'
+                        className='relative group flex items-center gap-2 rounded-md border border-brand-border bg-[rgba(255,255,255,0.05)] px-3.5 py-1.5 text-sm font-semibold text-payzone-gold shadow-sm transition-colors duration-300 hover:bg-[rgba(212,180,105,0.12)] md:px-4 md:py-2'
                 >
                         <ShoppingCart size={18} />
                         <span className='hidden sm:inline'>{t("nav.cart")}</span>
                         {cartItemCount > 0 && (
-                                <span className='absolute -top-2 -right-2 rounded-full bg-payzone-gold px-2 py-0.5 text-xs font-semibold text-payzone-navy shadow-sm transition duration-300 ease-in-out group-hover:bg-payzone-indigo'>
+                                <span className='absolute -top-2 -right-2 rounded-full border border-payzone-gold bg-payzone-gold px-2 py-0.5 text-xs font-semibold text-[#3e3e3e] shadow-sm transition duration-300 ease-in-out group-hover:bg-[rgba(212,180,105,0.85)]'>
                                         {cartItemCount}
                                 </span>
                         )}
@@ -30,11 +30,11 @@ const Navbar = () => {
                 <header className='navbar fixed top-0 right-0 w-full border-b border-brand-border shadow-lg backdrop-blur-xl transition-all duration-300 z-40'>
                         <div className='navbar-inner container mx-auto px-4 py-2 md:py-3'>
                                 <div className='mobile-navbar flex flex-wrap items-center justify-between gap-3 md:gap-4'>
-                                        <Link to='/' className='order-1 flex items-center gap-3 text-[#4A3524]'>
+                                        <Link to='/' className='order-1 flex items-center gap-3 text-payzone-gold'>
                                                 <img
                                                         src='/logo.png'
                                                         alt='شعار بوتيك'
-                                                        className='h-12 w-12 object-contain drop-shadow-[0_4px_12px_rgba(16,41,84,0.35)]'
+                                                        className='h-12 w-12 object-contain drop-shadow-[0_4px_12px_rgba(212,180,105,0.35)]'
                                                 />
                                                 <span className='text-2xl font-semibold uppercase tracking-wide'>{t("common.appName")}</span>
                                         </Link>
@@ -42,7 +42,7 @@ const Navbar = () => {
                                         <div className='mobile-auth-actions order-2 flex items-center gap-2 text-sm font-medium md:order-3 md:gap-3'>
                                                 {user ? (
                                                         <button
-                                                                className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-white/70 px-3.5 py-1.5 text-[#4A3524] shadow-sm hover:bg-payzone-gold/20 md:px-4 md:py-2'
+                                                                className='flex items-center gap-2 rounded-md border border-brand-border bg-[rgba(255,255,255,0.05)] px-3.5 py-1.5 text-payzone-gold shadow-sm transition-colors duration-300 hover:bg-[rgba(212,180,105,0.12)] md:px-4 md:py-2'
                                                                 onClick={logout}
                                                         >
                                                                 <LogOut size={18} />
@@ -52,14 +52,14 @@ const Navbar = () => {
                                                         <>
                                                                 <Link
                                                                         to={'/signup'}
-                                                                        className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-gold px-3 py-1 text-sm font-semibold text-[#4A3524] shadow-sm hover:bg-payzone-gold/80 md:px-3.5 md:py-1.5'
+                                                                        className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-gold px-3 py-1 text-sm font-semibold text-[#3e3e3e] shadow-sm transition-colors duration-300 hover:bg-[rgba(212,180,105,0.85)] md:px-3.5 md:py-1.5'
                                                                 >
                                                                         <UserPlus size={16} />
                                                                         {t("nav.signup")}
                                                                 </Link>
                                                                 <Link
                                                                         to={'/login'}
-                                                                        className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-indigo/80 px-3 py-1 text-sm text-[#4A3524] shadow-sm hover:bg-payzone-indigo md:px-3.5 md:py-1.5'
+                                                                        className='flex items-center gap-2 rounded-md border border-brand-border bg-[rgba(255,255,255,0.05)] px-3 py-1 text-sm text-payzone-gold shadow-sm transition-colors duration-300 hover:bg-[rgba(212,180,105,0.12)] md:px-3.5 md:py-1.5'
                                                                 >
                                                                         <LogIn size={16} />
                                                                         {t("nav.login")}
@@ -72,13 +72,13 @@ const Navbar = () => {
                                                 <nav className='flex items-center gap-3 md:gap-4'>
                                                         <Link
                                                                 to={'/'}
-                                                                className='brand-link text-[#4A3524] hover:text-[#6b4b32]'
+                                                                className='brand-link text-payzone-gold hover:text-white'
                                                         >
                                                                 {t("nav.home")}
                                                         </Link>
                                                         {isAdmin && (
                                                                 <Link
-                                                                        className='flex items-center gap-2 rounded-md border border-brand-border bg-payzone-gold/25 px-3 py-1 text-[#4A3524] shadow-sm hover:bg-payzone-gold/35'
+                                                                        className='flex items-center gap-2 rounded-md border border-brand-border bg-[rgba(255,255,255,0.05)] px-3 py-1 text-payzone-gold shadow-sm transition-colors duration-300 hover:bg-[rgba(212,180,105,0.12)]'
                                                                         to={'/secret-dashboard'}
                                                                 >
                                                                         <Lock className='inline-block' size={18} />
