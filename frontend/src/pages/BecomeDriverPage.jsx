@@ -37,7 +37,7 @@ const BecomeDriverPage = () => {
 
                 const message = `السلام عليكم، اسمي: ${fullName.trim()} من مدينة/حي: ${city.trim()} رقم الواتساب: ${whatsapp.trim()} أوقات العمل المتاحة: ${availability.trim()} لدي دراجة وأرغب في العمل في توصيل الطلبات مع بوتيك`;
                 const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/22247764130?text=${encodedMessage}`;
+                const whatsappUrl = `https://wa.me/22249639577?text=${encodedMessage}`;
 
                 const newWindow = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
                 if (newWindow) {
