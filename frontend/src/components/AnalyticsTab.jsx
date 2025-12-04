@@ -74,7 +74,7 @@ const AnalyticsTab = () => {
                                 />
                         </div>
                         <motion.div
-                                className='rounded-xl border border-payzone-indigo/40 bg-white/5 p-6 shadow-lg backdrop-blur-sm'
+                                className='rounded-xl border border-brand-border/60 bg-[rgba(255,255,255,0.04)] p-6 shadow-lg backdrop-blur-sm'
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: 0.25 }}
@@ -82,18 +82,18 @@ const AnalyticsTab = () => {
                                 <ResponsiveContainer width='100%' height={400}>
                                         <LineChart data={dailySalesData}>
                                                 <CartesianGrid stroke='rgba(255,255,255,0.1)' strokeDasharray='3 3' />
-                                                <XAxis dataKey='date' stroke='#F8FAFC' tick={{ fill: "#F8FAFC" }} />
-                                                <YAxis yAxisId='left' stroke='#F8FAFC' tick={{ fill: "#F8FAFC" }} />
-                                                <YAxis yAxisId='right' orientation='right' stroke='#F8FAFC' tick={{ fill: "#F8FAFC" }} />
+                                                <XAxis dataKey='date' stroke='#ffffff' tick={{ fill: "#ffffff" }} />
+                                                <YAxis yAxisId='left' stroke='#ffffff' tick={{ fill: "#ffffff" }} />
+                                                <YAxis yAxisId='right' orientation='right' stroke='#ffffff' tick={{ fill: "#ffffff" }} />
                                                 <Tooltip
-                                                        contentStyle={{ backgroundColor: "rgba(14,39,72,0.95)", borderRadius: "0.75rem", border: "1px solid rgba(210,156,74,0.4)", color: "#FFFFFF" }}
+                                                        contentStyle={{ backgroundColor: "rgba(62,62,62,0.95)", borderRadius: "0.75rem", border: "1px solid rgba(212,180,105,0.5)", color: "#ffffff" }}
                                                 />
-                                                <Legend wrapperStyle={{ color: "#FFFFFF" }} />
+                                                <Legend wrapperStyle={{ color: "#ffffff" }} />
                                                 <Line
                                                         yAxisId='left'
                                                         type='monotone'
                                                         dataKey='sales'
-                                                        stroke='#D29C4A'
+                                                        stroke='#d4b469'
                                                         strokeWidth={3}
                                                         activeDot={{ r: 8 }}
                                                         name={t("admin.analytics.chart.sales")}
@@ -102,7 +102,7 @@ const AnalyticsTab = () => {
                                                         yAxisId='right'
                                                         type='monotone'
                                                         dataKey='revenue'
-                                                        stroke='#4B4ACF'
+                                                        stroke='#ffffff'
                                                         strokeWidth={3}
                                                         activeDot={{ r: 8 }}
                                                         name={t("admin.analytics.chart.revenue")}
@@ -127,8 +127,8 @@ const AnalyticsCard = ({ title, value, icon: Icon, gradient }) => (
                 </div>
                 <div className='relative z-10 flex justify-between'>
                         <div>
-                                <p className='mb-1 text-xs font-semibold uppercase tracking-wide text-[#4A3524]/70'>{title}</p>
-                                <h3 className='text-3xl font-bold text-[#4A3524]'>{value}</h3>
+                                <p className='mb-1 text-xs font-semibold uppercase tracking-wide text-payzone-gold/70'>{title}</p>
+                                <h3 className='text-3xl font-bold text-payzone-gold'>{value}</h3>
                         </div>
                         <div className='flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-payzone-gold'>
                                 <Icon className='h-6 w-6' />

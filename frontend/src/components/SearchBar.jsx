@@ -363,7 +363,7 @@ const SearchBar = ({ variant = "global", categorySlug = null }) => {
                 <div ref={wrapperRef} className='mx-auto flex w-full max-w-4xl flex-col gap-3'>
                         <form
                                 onSubmit={handleSubmit}
-                                className='flex flex-col gap-3 rounded-3xl border border-white/10 bg-payzone-navy p-4 shadow-xl'
+                                className='flex flex-col gap-3 rounded-3xl border border-brand-border bg-payzone-navy p-4 shadow-xl'
                         >
                                 <div className='flex flex-col gap-3 sm:flex-row sm:items-center'>
                                         <div className='relative flex-1'>

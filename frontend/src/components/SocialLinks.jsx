@@ -41,8 +41,8 @@ export default function SocialLinks() {
 
   const baseButtonClasses =
     "inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-colors duration-200 border shadow-sm";
-  const defaultButtonClasses = `${baseButtonClasses} border-brand-border bg-payzone-white/85 text-[#4A3524] hover:bg-payzone-gold/20`;
-  const whatsappButtonClasses = `${baseButtonClasses} border-[#4A3524] bg-[#F7F0E5] text-[#4A3524] shadow-md hover:bg-[#e9dfcf]`;
+  const defaultButtonClasses = `${baseButtonClasses} border-brand-border bg-payzone-white/85 text-payzone-gold hover:bg-payzone-gold/20`;
+  const whatsappButtonClasses = `${baseButtonClasses} border-brand-border bg-[rgba(255,255,255,0.08)] text-payzone-gold shadow-md hover:bg-[rgba(212,180,105,0.12)]`;
 
   return (
     <div className="w-full flex flex-wrap items-center justify-center gap-3 mt-8">

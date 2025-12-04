@@ -4,17 +4,17 @@
 
 @layer base {
         :root {
-                --color-background: #f5eee3;
-                --color-text-primary: #4a3524;
-                --color-text-secondary: #7a5a3a;
-                --color-accent: #a6733f;
-                --color-border: #d8c3a5;
-                --color-card: #ffffff;
-                --color-ivory: #f5eee3;
-                --admin-text-dark: #4a3524;
-                --text-dark: #4a3524;
+                --color-background: #3e3e3e;
+                --color-text-primary: #d4b469;
+                --color-text-secondary: #ffffff;
+                --color-accent: #d4b469;
+                --color-border: #d4b469;
+                --color-card: rgba(255, 255, 255, 0.06);
+                --color-ivory: rgba(255, 255, 255, 0.08);
+                --admin-text-dark: #d4b469;
+                --text-dark: #d4b469;
                 --text-light: #ffffff;
-                --placeholder-color: #7a7a7a;
+                --placeholder-color: rgba(212, 180, 105, 0.7);
         }
 
         body {
@@ -37,23 +37,23 @@
         .brand-link:hover,
         .brand-link:active {
                 background-image: linear-gradient(135deg, var(--color-accent), var(--color-text-primary));
-                color: var(--color-accent);
+                color: var(--color-text-secondary);
         }
 
         .product-name,
         .product-name:hover,
         .product-name:focus,
         .product-name:active {
-                color: #4a3524 !important;
+                color: var(--color-accent) !important;
         }
 
         .old-price {
-                color: #b0b0b0;
+                color: rgba(255, 255, 255, 0.6);
                 text-decoration: line-through;
         }
 
         .new-price {
-                color: #d46a6a;
+                color: var(--color-accent);
                 font-weight: 700;
         }
 
@@ -98,28 +98,30 @@
         }
 
         .checkout-page .btn-primary {
-                background-color: #a6733f;
-                color: var(--text-light) !important;
+                background-color: var(--color-accent);
+                color: var(--text-dark) !important;
+                border: 1px solid var(--color-border);
         }
 
         .checkout-page .btn-primary:hover,
         .checkout-page .btn-primary:focus-visible {
-                background-color: #8c5d30;
-                color: var(--text-light) !important;
+                background-color: rgba(212, 180, 105, 0.9);
+                color: var(--text-dark) !important;
         }
 }
 
 .navbar {
-        background-color: rgba(245, 238, 227, 0.92);
-        color: #4a3524;
+        background-color: rgba(62, 62, 62, 0.95);
+        color: var(--color-accent);
+        border-bottom: 1px solid var(--color-border);
         backdrop-filter: blur(12px);
 }
 
 .navbar a,
 .navbar button,
 .navbar svg {
-        color: #4a3524 !important;
-        fill: #4a3524 !important;
+        color: var(--color-accent) !important;
+        fill: var(--color-accent) !important;
 }
 
 .navbar a:hover,
@@ -128,8 +130,8 @@
 .navbar a:active,
 .navbar button:active,
 .navbar svg:active {
-        color: #6b4b32 !important;
-        fill: #6b4b32 !important;
+        color: var(--color-text-secondary) !important;
+        fill: var(--color-text-secondary) !important;
 }
 
 @media (max-width: 768px) {
@@ -195,12 +197,12 @@
 .discount-switch__slider {
         width: 60px;
         height: 30px;
-        background-color: lightgray;
+        background-color: rgba(255, 255, 255, 0.1);
         border-radius: 20px;
         overflow: hidden;
         display: flex;
         align-items: center;
-        border: 4px solid transparent;
+        border: 2px solid var(--color-border);
         transition: 0.3s;
         box-shadow: 0 0 10px 0 rgb(0 0 0 / 25%) inset;
         position: relative;
@@ -211,7 +213,7 @@
         display: block;
         width: 100%;
         height: 100%;
-        background-color: #fff;
+        background-color: var(--color-text-secondary);
         transform: translateX(-30px);
         border-radius: 20px;
         transition: 0.3s;
@@ -219,7 +221,7 @@
 }
 
 .discount-switch__checkbox:checked + .discount-switch__slider {
-        background-color: #2196f3;
+        background-color: rgba(212, 180, 105, 0.4);
 }
 
 .discount-switch__checkbox:checked + .discount-switch__slider::before {
@@ -232,7 +234,7 @@
 }
 
 .discount-switch__checkbox:focus-visible + .discount-switch__slider {
-        outline: 2px solid #fbbf24;
+        outline: 2px solid var(--color-border);
         outline-offset: 2px;
 }
 
@@ -268,8 +270,8 @@
 }
 
 .admin-panel .admin-tab {
-        background-color: rgba(255, 255, 255, 0.9);
-        color: var(--admin-text-dark) !important;
+        background-color: rgba(255, 255, 255, 0.04);
+        color: var(--color-text-secondary) !important;
         border-bottom: 2px solid transparent;
         transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease;
 }
@@ -277,15 +279,15 @@
 .admin-panel .admin-tab:hover,
 .admin-panel .admin-tab:focus,
 .admin-panel .admin-tab:active {
-        color: var(--admin-text-dark) !important;
-        background-color: rgba(255, 255, 255, 0.95);
+        color: var(--color-text-secondary) !important;
+        background-color: rgba(255, 255, 255, 0.08);
 }
 
 .admin-panel .admin-tab.admin-tab--active {
         border-bottom-color: var(--color-accent);
-        box-shadow: inset 0 -2px 0 var(--admin-text-dark);
-        background-color: #f7ecde;
-        color: var(--admin-text-dark) !important;
+        box-shadow: inset 0 -2px 0 var(--color-accent);
+        background-color: rgba(212, 180, 105, 0.08);
+        color: var(--color-text-secondary) !important;
 }
 
 .admin-panel [class*="bg-payzone-navy"],
@@ -295,22 +297,22 @@
 .admin-panel [class*="bg-[#4a3524"],
 .admin-panel [class*="bg-[#3b3ad6"],
 .admin-panel .dark-surface {
-        color: var(--admin-text-dark) !important;
+        color: var(--color-text-secondary) !important;
 }
 
 .admin-panel [class*="bg-payzone-navy"] :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td),
 .admin-panel [class*="bg-payzone-indigo"] :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td),
 .admin-panel [class*="bg-payzone-gold"] :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td),
 .admin-panel [class*="bg-black"] :is(h1, h2, h3, h4, h5, h6, label, p, span, small, li, dt, dd, th, td) {
-        color: var(--admin-text-dark) !important;
+        color: var(--color-text-secondary) !important;
 }
 
 .admin-panel [class*="bg-payzone-navy"] :is(input, textarea, select),
 .admin-panel [class*="bg-payzone-indigo"] :is(input, textarea, select),
 .admin-panel [class*="bg-payzone-gold"] :is(input, textarea, select),
 .admin-panel [class*="bg-black"] :is(input, textarea, select) {
-        color: var(--admin-text-dark) !important;
-        caret-color: var(--admin-text-dark);
+        color: var(--color-text-secondary) !important;
+        caret-color: var(--color-text-secondary);
 }
 
 .admin-panel [class*="bg-payzone-navy"] :is(input::placeholder, textarea::placeholder, select::placeholder),
@@ -321,25 +323,25 @@
 }
 
 .courier-cta-button {
-        background-color: #a6733f;
-        color: #4a3524;
-        border: 1px solid #8c5d30;
+        background-color: var(--color-accent);
+        color: var(--color-background);
+        border: 1px solid var(--color-border);
         border-radius: 999px;
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(70, 47, 31, 0.12);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25), 0 2px 6px rgba(0, 0, 0, 0.35);
         transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease, border-color 200ms ease;
 }
 
 .courier-cta-button:hover,
 .courier-cta-button:focus-visible {
         transform: translateY(-2px);
-        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(70, 47, 31, 0.16);
-        border-color: #7a5129;
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35), 0 4px 10px rgba(0, 0, 0, 0.45);
+        border-color: var(--color-text-secondary);
         outline: none;
 }
 
 .courier-cta-button:active {
         transform: translateY(-1px) scale(0.995);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07), 0 3px 8px rgba(70, 47, 31, 0.14);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 3px 8px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes courierPulse {

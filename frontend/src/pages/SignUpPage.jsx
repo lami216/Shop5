@@ -31,14 +31,14 @@ const SignUpPage = () => {
 
                 return (
                         <div>
-                                <label htmlFor={id} className='block text-sm font-medium text-payzone-navy'>
+                                <label htmlFor={id} className='block text-sm font-medium text-payzone-gold'>
                                         {label}
                                 </label>
                                 <div className='relative mt-1 rounded-md shadow-sm'>
                                         <div
                                                 className={`pointer-events-none absolute inset-y-0 ${isPasswordField ? "right-12" : "right-0"} flex items-center pr-3`}
                                         >
-                                                <Icon className='h-5 w-5 text-payzone-navy/50' aria-hidden='true' />
+                                                <Icon className='h-5 w-5 text-payzone-gold/50' aria-hidden='true' />
                                         </div>
                                         {isPasswordField && (
                                                 <button
@@ -49,7 +49,7 @@ const SignUpPage = () => {
                                                                         [valueKey]: !prev[valueKey],
                                                                 }))
                                                         }
-                                                        className='absolute inset-y-0 right-2 flex items-center text-payzone-navy/70 transition-colors duration-200 hover:text-payzone-navy focus:outline-none'
+                                                        className='absolute inset-y-0 right-2 flex items-center text-payzone-gold/70 transition-colors duration-200 hover:text-payzone-gold focus:outline-none'
                                                         aria-label={
                                                                 showPassword[valueKey]
                                                                         ? t("auth.signup.hidePassword")
@@ -71,7 +71,7 @@ const SignUpPage = () => {
                                                 onChange={(e) => setFormData({ ...formData, [valueKey]: e.target.value })}
                                                 className={`block w-full rounded-md border border-payzone-indigo/40 bg-payzone-navy/60 px-3 py-2 ${
                                                         isPasswordField ? "pr-24" : "pr-10"
-                                                } text-payzone-navy placeholder-payzone-navy/40 focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo sm:text-sm`}
+                                                } text-payzone-gold placeholder-[rgba(212,180,105,0.6)] focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo sm:text-sm`}
                                                 placeholder={placeholder}
                                         />
                                 </div>
@@ -135,7 +135,7 @@ const SignUpPage = () => {
 
                                                 <button
                                                         type='submit'
-                                                        className='flex w-full items-center justify-center gap-2 rounded-md bg-payzone-gold px-4 py-2 text-sm font-semibold text-payzone-navy transition duration-300 hover:bg-[#b8873d] focus:outline-none focus:ring-2 focus:ring-payzone-indigo/60 disabled:opacity-50'
+                                                        className='flex w-full items-center justify-center gap-2 rounded-md bg-payzone-gold px-4 py-2 text-sm font-semibold text-[#3e3e3e] transition duration-300 hover:bg-[rgba(212,180,105,0.85)] focus:outline-none focus:ring-2 focus:ring-payzone-indigo/60 disabled:opacity-50'
                                                         disabled={loading}
                                                 >
                                                         {loading ? (
@@ -152,7 +152,7 @@ const SignUpPage = () => {
                                                 </button>
                                         </form>
 
-                                        <p className='mt-8 text-center text-sm text-payzone-navy/70'>
+                                        <p className='mt-8 text-center text-sm text-payzone-gold/70'>
                                                 {t("auth.signup.prompt")} {" "}
                                                 <Link to='/login' className='font-medium text-payzone-indigo transition duration-300 hover:text-payzone-gold'>
                                                         {t("auth.signup.cta")}{" "}

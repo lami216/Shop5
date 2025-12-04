@@ -4,7 +4,7 @@ export default {
         theme: {
                 extend: {
                         colors: {
-                                "payzone-navy": "var(--color-text-primary)",
+                                "payzone-navy": "var(--color-background)",
                                 "payzone-white": "var(--color-ivory)",
                                 "payzone-gold": "var(--color-accent)",
                                 "payzone-indigo": "var(--color-text-secondary)",
