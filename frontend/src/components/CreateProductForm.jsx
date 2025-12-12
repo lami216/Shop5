@@ -6,7 +6,7 @@ import useTranslation from "../hooks/useTranslation";
 import { useProductStore } from "../stores/useProductStore";
 import { useCategoryStore } from "../stores/useCategoryStore";
 import { formatMRU } from "../lib/formatMRU";
-import { compressImage, MAX_IMAGE_SIZE_BYTES } from "../lib/imageCompression";
+import { compressImage, MAX_UPLOAD_SIZE_BYTES } from "../lib/imageCompression";
 
 const MAX_IMAGES = 3;
 
@@ -99,9 +99,32 @@ const CreateProductForm = () => {
                 if (!files.length) return;
 
                 try {
+                        const currentTotal = formState.existingImages.length + formState.newImages.length;
+                        const remainingSlots = MAX_IMAGES - currentTotal;
+
+                        if (remainingSlots <= 0) {
+                                toast.error(t("admin.createProduct.messages.imagesLimit", { count: MAX_IMAGES }));
+                                return;
+                        }
+
+                        const limitedFiles = files.slice(0, remainingSlots);
+
+                        if (files.length > remainingSlots) {
+                                toast.error(
+                                        t("admin.createProduct.messages.imagesRemaining", {
+                                                count: remainingSlots,
+                                        })
+                                );
+                        }
+
                         const compressedImages = (
                                 await Promise.all(
-                                        files.map(async (file) => {
+                                        limitedFiles.map(async (file) => {
+                                                if (file.size > MAX_UPLOAD_SIZE_BYTES) {
+                                                        toast.error(t("admin.createProduct.messages.imageTooLarge"));
+                                                        return null;
+                                                }
+
                                                 try {
                                                         const { dataUrl } = await compressImage(file);
 
@@ -118,39 +141,7 @@ const CreateProductForm = () => {
                         if (!compressedImages.length) return;
 
                         setFormState((previous) => {
-                                const remainingSlots = MAX_IMAGES - (previous.existingImages.length + previous.newImages.length);
-
-                                if (remainingSlots <= 0) {
-                                        toast.error(t("admin.createProduct.messages.imagesLimit", { count: MAX_IMAGES }));
-                                        return previous;
-                                }
-
-                                const acceptedImages = compressedImages.slice(0, remainingSlots);
-
-                                if (compressedImages.length > remainingSlots) {
-                                        toast.error(
-                                                t("admin.createProduct.messages.imagesRemaining", {
-                                                        count: remainingSlots,
-                                                })
-                                        );
-                                }
-
-                                if (!acceptedImages.length) {
-                                        return previous;
-                                }
-
-                                const oversizeImages = acceptedImages.filter(
-                                        (image) =>
-                                                (image.split(",")[1]?.length ?? 0) >
-                                                Math.ceil((MAX_IMAGE_SIZE_BYTES * 4) / 3)
-                                );
-
-                                if (oversizeImages.length) {
-                                        toast.error(t("admin.createProduct.messages.imageCompressionFailed"));
-                                        return previous;
-                                }
-
-                                const nextNewImages = [...previous.newImages, ...acceptedImages];
+                                const nextNewImages = [...previous.newImages, ...compressedImages];
                                 let coverSource = previous.coverSource;
                                 let coverIndex = previous.coverIndex;
 
@@ -389,10 +380,10 @@ const CreateProductForm = () => {
                 })),
                 ...formState.newImages.map((image, index) => ({
                         type: "new",
-                        url: image,
-                        index,
-                        key: `${image}-${index}`,
-                })),
+                                url: image,
+                                index,
+                                key: `${image}-${index}`,
+                        })),
         ];
 
         const title = isEditing
@@ -435,7 +426,7 @@ const CreateProductForm = () => {
                                                 name='name'
                                                 value={formState.name}
                                                 onChange={(event) => setFormState({ ...formState, name: event.target.value })}
-                                                className='mt-1 block w-full rounded-md border border-payzone-indigo/40 bg-payzone-navy/60 px-3 py-2 text-payzone-gold placeholder-[rgba(212,180,105,0.6)]/40 focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
+                                                className='mt-1 block w-full rounded-md border border-payzone-indigo/40 bg-white px-3 py-2 text-black placeholder:text-[#666666] caret-black focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
                                                 required
                                         />
                                 </div>
@@ -452,7 +443,7 @@ const CreateProductForm = () => {
                                                         setFormState({ ...formState, description: event.target.value })
                                                 }
                                                 rows='3'
-                                                className='mt-1 block w-full rounded-md border border-payzone-indigo/40 bg-payzone-navy/60 px-3 py-2 text-payzone-gold placeholder-[rgba(212,180,105,0.6)]/40 focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
+                                                className='mt-1 block w-full rounded-md border border-payzone-indigo/40 bg-white px-3 py-2 text-black placeholder:text-[#666666] caret-black focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
                                                 required
                                         />
                                 </div>
@@ -468,7 +459,7 @@ const CreateProductForm = () => {
                                                 value={formState.price}
                                                 onChange={(event) => setFormState({ ...formState, price: event.target.value })}
                                                 step='0.01'
-                                                className='mt-1 block w-full rounded-md border border-payzone-indigo/40 bg-payzone-navy/60 px-3 py-2 text-payzone-gold placeholder-[rgba(212,180,105,0.6)]/40 focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
+                                                className='mt-1 block w-full rounded-md border border-payzone-indigo/40 bg-white px-3 py-2 text-black placeholder:text-[#666666] caret-black focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
                                                 required
                                         />
                                 </div>
@@ -507,16 +498,16 @@ const CreateProductForm = () => {
                                                                 {t("admin.createProduct.fields.discountPercentage")}
                                                         </label>
                                                         <input
-                                                                id='discountPercentage'
-                                                                type='number'
-                                                                min='1'
-                                                                max='99'
-                                                                step='0.01'
-                                                                value={formState.discountPercentage}
-                                                                onChange={handleDiscountPercentageChange}
-                                                                className='mt-1 block w-full rounded-md border border-payzone-indigo/40 bg-payzone-navy/60 px-3 py-2 text-payzone-gold placeholder-[rgba(212,180,105,0.6)]/40 focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
-                                                                placeholder={t("admin.createProduct.placeholders.discountPercentage")}
-                                                        />
+                                                        id='discountPercentage'
+                                                        type='number'
+                                                        min='1'
+                                                        max='99'
+                                                        step='0.01'
+                                                        value={formState.discountPercentage}
+                                                        onChange={handleDiscountPercentageChange}
+                                                        className='mt-1 block w-full rounded-md border border-payzone-indigo/40 bg-white px-3 py-2 text-black placeholder:text-[#666666] caret-black focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
+                                                        placeholder={t("admin.createProduct.placeholders.discountPercentage")}
+                                                />
                                                         {discountedPreviewPrice !== null && (
                                                                 <p className='text-xs text-payzone-gold'>
                                                                         {t("admin.createProduct.fields.discountPreview", {
@@ -541,7 +532,7 @@ const CreateProductForm = () => {
                                                 onChange={(event) =>
                                                         setFormState({ ...formState, category: event.target.value })
                                                 }
-                                                className='mt-1 block w-full rounded-md border border-payzone-indigo/40 bg-payzone-navy/60 px-3 py-2 text-payzone-gold focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
+                                                className='mt-1 block w-full rounded-md border border-payzone-indigo/40 bg-white px-3 py-2 text-black placeholder:text-[#666666] caret-black focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
                                                 required
                                         >
                                                 <option value=''>
