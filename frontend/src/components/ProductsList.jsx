@@ -109,7 +109,7 @@ const ProductsList = ({ onEdit }) => {
                                                                         onClick={() => toggleFeaturedProduct(product._id)}
                                                                         className={`rounded-full p-1 transition-colors duration-200 ${
                                                                                 product.isFeatured
-                                                                                        ? "bg-payzone-gold text-white"
+                                                                                        ? "bg-payzone-gold text-black"
                                                                                         : "bg-payzone-navy/60 text-payzone-gold/70"
                                                                         } hover:ring-2 hover:ring-payzone-indigo/40`}
                                                                 >
