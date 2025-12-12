@@ -3,6 +3,7 @@ import { ImagePlus, Trash2, Edit3, X, Save } from "lucide-react";
 import toast from "react-hot-toast";
 import useTranslation from "../hooks/useTranslation";
 import { useCategoryStore } from "../stores/useCategoryStore";
+import { compressImage, MAX_IMAGE_SIZE_BYTES } from "../lib/imageCompression";
 
 const CategoryManager = () => {
         const {
@@ -50,22 +51,30 @@ const CategoryManager = () => {
                 });
         }, [selectedCategory, createEmptyForm]);
 
-        const handleImageChange = (event) => {
+        const handleImageChange = async (event) => {
                 const file = event.target.files?.[0];
                 if (!file) return;
 
-                const reader = new FileReader();
-                reader.onloadend = () => {
-                        const result = typeof reader.result === "string" ? reader.result : "";
+                try {
+                        const { dataUrl } = await compressImage(file);
+
+                        if ((dataUrl.split(",")[1]?.length ?? 0) > Math.ceil((MAX_IMAGE_SIZE_BYTES * 4) / 3)) {
+                                toast.error(t("categories.manager.form.imageCompressionFailed"));
+                                return;
+                        }
+
                         setFormState((previous) => ({
                                 ...previous,
-                                image: result,
-                                imagePreview: result,
+                                image: dataUrl,
+                                imagePreview: dataUrl,
                                 imageChanged: true,
                         }));
-                };
-                reader.readAsDataURL(file);
-                event.target.value = "";
+                } catch (error) {
+                        console.error("Failed to compress category image", error);
+                        toast.error(t("categories.manager.form.imageCompressionFailed"));
+                } finally {
+                        event.target.value = "";
+                }
         };
 
         const resetForm = () => {
