@@ -273,16 +273,18 @@
 
 .admin-panel .form-control,
 .admin-panel input,
+.admin-panel input[type="text"],
+.admin-panel input[type="number"],
 .admin-panel textarea,
 .admin-panel select {
-        color: var(--admin-text-dark) !important;
-        caret-color: var(--admin-text-dark);
+        color: #000000 !important;
+        caret-color: #000000;
 }
 
 .admin-panel input::placeholder,
 .admin-panel textarea::placeholder,
 .admin-panel select::placeholder {
-        color: var(--placeholder-color) !important;
+        color: #666666 !important;
         opacity: 1;
 }
 
@@ -328,15 +330,15 @@
 .admin-panel [class*="bg-payzone-indigo"] :is(input, textarea, select),
 .admin-panel [class*="bg-payzone-gold"] :is(input, textarea, select),
 .admin-panel [class*="bg-black"] :is(input, textarea, select) {
-        color: var(--color-text-secondary) !important;
-        caret-color: var(--color-text-secondary);
+        color: #000000 !important;
+        caret-color: #000000;
 }
 
 .admin-panel [class*="bg-payzone-navy"] :is(input::placeholder, textarea::placeholder, select::placeholder),
 .admin-panel [class*="bg-payzone-indigo"] :is(input::placeholder, textarea::placeholder, select::placeholder),
 .admin-panel [class*="bg-payzone-gold"] :is(input::placeholder, textarea::placeholder, select::placeholder),
 .admin-panel [class*="bg-black"] :is(input::placeholder, textarea::placeholder, select::placeholder) {
-        color: var(--placeholder-color) !important;
+        color: #666666 !important;
 }
 
 .courier-cta-button {
