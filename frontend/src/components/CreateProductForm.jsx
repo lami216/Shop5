@@ -6,6 +6,7 @@ import useTranslation from "../hooks/useTranslation";
 import { useProductStore } from "../stores/useProductStore";
 import { useCategoryStore } from "../stores/useCategoryStore";
 import { formatMRU } from "../lib/formatMRU";
+import { compressImage, MAX_IMAGE_SIZE_BYTES } from "../lib/imageCompression";
 
 const MAX_IMAGES = 3;
 
@@ -92,68 +93,82 @@ const CreateProductForm = () => {
                 ? Number((numericPricePreview - numericPricePreview * (numericDiscountValue / 100)).toFixed(2))
                 : null;
 
-        const handleImagesChange = (event) => {
+        const handleImagesChange = async (event) => {
                 const input = event.target;
                 const files = Array.from(input.files || []);
                 if (!files.length) return;
 
-                Promise.all(
-                        files.map(
-                                (file) =>
-                                        new Promise((resolve, reject) => {
-                                                const reader = new FileReader();
-                                                reader.onloadend = () => resolve(reader.result);
-                                                reader.onerror = reject;
-                                                reader.readAsDataURL(file);
+                try {
+                        const compressedImages = (
+                                await Promise.all(
+                                        files.map(async (file) => {
+                                                try {
+                                                        const { dataUrl } = await compressImage(file);
+
+                                                        return dataUrl;
+                                                } catch (error) {
+                                                        console.error("Failed to compress image", error);
+                                                        toast.error(t("admin.createProduct.messages.imageCompressionFailed"));
+                                                        return null;
+                                                }
                                         })
-                        )
-                )
-                        .then((base64Images) => {
-                                setFormState((previous) => {
-                                        const remainingSlots = MAX_IMAGES - (previous.existingImages.length + previous.newImages.length);
+                                )
+                        ).filter((image) => Boolean(image));
 
-                                        if (remainingSlots <= 0) {
-                                                toast.error(
-                                                        t("admin.createProduct.messages.imagesLimit", { count: MAX_IMAGES })
-                                                );
-                                                return previous;
-                                        }
+                        if (!compressedImages.length) return;
 
-                                        const acceptedImages = base64Images.slice(0, remainingSlots);
+                        setFormState((previous) => {
+                                const remainingSlots = MAX_IMAGES - (previous.existingImages.length + previous.newImages.length);
 
-                                        if (base64Images.length > remainingSlots) {
-                                                toast.error(
-                                                        t("admin.createProduct.messages.imagesRemaining", {
-                                                                count: remainingSlots,
-                                                        })
-                                                );
-                                        }
+                                if (remainingSlots <= 0) {
+                                        toast.error(t("admin.createProduct.messages.imagesLimit", { count: MAX_IMAGES }));
+                                        return previous;
+                                }
 
-                                        if (!acceptedImages.length) {
-                                                return previous;
-                                        }
+                                const acceptedImages = compressedImages.slice(0, remainingSlots);
 
-                                        const nextNewImages = [...previous.newImages, ...acceptedImages];
-                                        let coverSource = previous.coverSource;
-                                        let coverIndex = previous.coverIndex;
+                                if (compressedImages.length > remainingSlots) {
+                                        toast.error(
+                                                t("admin.createProduct.messages.imagesRemaining", {
+                                                        count: remainingSlots,
+                                                })
+                                        );
+                                }
 
-                                        if (previous.existingImages.length + previous.newImages.length === 0) {
-                                                coverSource = "new";
-                                                coverIndex = 0;
-                                        }
+                                if (!acceptedImages.length) {
+                                        return previous;
+                                }
 
-                                        return {
-                                                ...previous,
-                                                newImages: nextNewImages,
-                                                coverSource,
-                                                coverIndex,
-                                        };
-                                });
-                        })
-                        .catch(() => console.log("Failed to read images"))
-                        .finally(() => {
-                                input.value = "";
+                                const oversizeImages = acceptedImages.filter(
+                                        (image) =>
+                                                (image.split(",")[1]?.length ?? 0) >
+                                                Math.ceil((MAX_IMAGE_SIZE_BYTES * 4) / 3)
+                                );
+
+                                if (oversizeImages.length) {
+                                        toast.error(t("admin.createProduct.messages.imageCompressionFailed"));
+                                        return previous;
+                                }
+
+                                const nextNewImages = [...previous.newImages, ...acceptedImages];
+                                let coverSource = previous.coverSource;
+                                let coverIndex = previous.coverIndex;
+
+                                if (previous.existingImages.length + previous.newImages.length === 0) {
+                                        coverSource = "new";
+                                        coverIndex = 0;
+                                }
+
+                                return {
+                                        ...previous,
+                                        newImages: nextNewImages,
+                                        coverSource,
+                                        coverIndex,
+                                };
                         });
+                } finally {
+                        input.value = "";
+                }
         };
 
         const handleRemoveExistingImage = (indexToRemove) => {
