@@ -82,13 +82,13 @@ const AnalyticsTab = () => {
                                 <ResponsiveContainer width='100%' height={400}>
                                         <LineChart data={dailySalesData}>
                                                 <CartesianGrid stroke='rgba(255,255,255,0.1)' strokeDasharray='3 3' />
-                                                <XAxis dataKey='date' stroke='#ffffff' tick={{ fill: "#ffffff" }} />
-                                                <YAxis yAxisId='left' stroke='#ffffff' tick={{ fill: "#ffffff" }} />
-                                                <YAxis yAxisId='right' orientation='right' stroke='#ffffff' tick={{ fill: "#ffffff" }} />
+                                                <XAxis dataKey='date' stroke='#000000' tick={{ fill: "#000000" }} />
+                                                <YAxis yAxisId='left' stroke='#000000' tick={{ fill: "#000000" }} />
+                                                <YAxis yAxisId='right' orientation='right' stroke='#000000' tick={{ fill: "#000000" }} />
                                                 <Tooltip
-                                                        contentStyle={{ backgroundColor: "rgba(62,62,62,0.95)", borderRadius: "0.75rem", border: "1px solid rgba(212,180,105,0.5)", color: "#ffffff" }}
+                                                        contentStyle={{ backgroundColor: "rgba(62,62,62,0.95)", borderRadius: "0.75rem", border: "1px solid rgba(212,180,105,0.5)", color: "#000000" }}
                                                 />
-                                                <Legend wrapperStyle={{ color: "#ffffff" }} />
+                                                <Legend wrapperStyle={{ color: "#000000" }} />
                                                 <Line
                                                         yAxisId='left'
                                                         type='monotone'
@@ -102,7 +102,7 @@ const AnalyticsTab = () => {
                                                         yAxisId='right'
                                                         type='monotone'
                                                         dataKey='revenue'
-                                                        stroke='#ffffff'
+                                                        stroke='#000000'
                                                         strokeWidth={3}
                                                         activeDot={{ r: 8 }}
                                                         name={t("admin.analytics.chart.revenue")}
