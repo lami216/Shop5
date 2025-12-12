@@ -3,7 +3,7 @@ import { ImagePlus, Trash2, Edit3, X, Save } from "lucide-react";
 import toast from "react-hot-toast";
 import useTranslation from "../hooks/useTranslation";
 import { useCategoryStore } from "../stores/useCategoryStore";
-import { compressImage, MAX_IMAGE_SIZE_BYTES } from "../lib/imageCompression";
+import { compressImage, MAX_UPLOAD_SIZE_BYTES } from "../lib/imageCompression";
 
 const CategoryManager = () => {
         const {
@@ -56,12 +56,12 @@ const CategoryManager = () => {
                 if (!file) return;
 
                 try {
-                        const { dataUrl } = await compressImage(file);
-
-                        if ((dataUrl.split(",")[1]?.length ?? 0) > Math.ceil((MAX_IMAGE_SIZE_BYTES * 4) / 3)) {
-                                toast.error(t("categories.manager.form.imageCompressionFailed"));
+                        if (file.size > MAX_UPLOAD_SIZE_BYTES) {
+                                toast.error(t("categories.manager.form.imageTooLarge"));
                                 return;
                         }
+
+                        const { dataUrl } = await compressImage(file);
 
                         setFormState((previous) => ({
                                 ...previous,
@@ -161,7 +161,7 @@ const CategoryManager = () => {
                                                         <input
                                                                 id='category-name'
                                                                 type='text'
-                                                                className='mt-1 block w-full rounded-md border border-payzone-indigo/40 bg-payzone-navy/60 px-3 py-2 text-payzone-gold focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
+                                                                className='mt-1 block w-full rounded-md border border-payzone-indigo/40 bg-white px-3 py-2 text-black placeholder:text-[#666666] caret-black focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
                                                                 value={formState.name}
                                                                 onChange={(event) => setFormState((previous) => ({
                                                                         ...previous,
@@ -210,7 +210,7 @@ const CategoryManager = () => {
                                                 <textarea
                                                         id='category-description'
                                                         rows={3}
-                                                        className='mt-1 block w-full rounded-md border border-payzone-indigo/40 bg-payzone-navy/60 px-3 py-2 text-payzone-gold focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
+                                                        className='mt-1 block w-full rounded-md border border-payzone-indigo/40 bg-white px-3 py-2 text-black placeholder:text-[#666666] caret-black focus:border-payzone-gold focus:outline-none focus:ring-2 focus:ring-payzone-indigo'
                                                         value={formState.description}
                                                         onChange={(event) => setFormState((previous) => ({
                                                                 ...previous,
